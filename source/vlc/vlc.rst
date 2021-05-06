@@ -1,14 +1,14 @@
-MinecraftMediaLibrary and VLC Media Player
-==============================================================
+MinecraftMediaLibrary General Information
+=========================================
 
 This section is intended for developers and **strongly** recommended for readers to take
 a look at if they want to use the library and know what is going on internally.
 
 VLC Media Player
-==============================================================
+----------------
 
-.. image:: https://images.videolan.org/images/icons-VLC/vlc.mini.svg
-  :width: 200
+.. image:: ../resources/images/vlc.svg
+  :width: 256
 
 The library uses a very common media player today known as
 `VLC Media Player <https://www.videolan.org/>`__. The reason due to this is because
@@ -24,7 +24,7 @@ flexible, and a very much valid option to choose.
   to how it is written in C/C++/Lua).
 
 Implementing VLC Into MinecraftMediaLibrary
-==============================================================
+-------------------------------------------
 
 Obviously, VLC Media Player is not written in Java, but mainly composed in C, C++, and
 other native libraries. Luckily, a project known as `VLCJ <https://github.com/caprica/vlcj>`__
@@ -44,7 +44,7 @@ video playback at once. It is unsafe and not ready for production. However, in t
 perhaps VLCJ - Pro could be an option.
 
 Handling VLC Binaries
-==============================================================
+---------------------
 
 This is arguably one of the hardest problems I had to solve -- giving support to multiple platforms.
 Not everyone will have VLC installed on their PC. I had to find a way to fix or bypass this issue.
@@ -63,7 +63,7 @@ means that Windows, Mac, Linux (and even separate Linux Distributions) have thei
     binaries/linux-installation
 
 Loading VLC Binaries
-==============================================================
+--------------------
 
 Loading VLC binaries is a separate issue as each operating system requires it's own method of loading the
 VLC binaries. After installing the binaries for the user, we must load them properly in order for the
@@ -84,7 +84,7 @@ from the actual library, it can find the proper paths. Thus, I had to implement 
 to try and load VLC.
 
 Implementing My Own Solution for NativeDiscovery
-==============================================================
+------------------------------------------------
 
 I created separate abstractions for each module. In order to load VLC binaries, I created a method which takes in
 a directory and attempts to load VLC from that directory. It uses recursion to locate the plugins folder and the folder

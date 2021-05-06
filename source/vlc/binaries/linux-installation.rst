@@ -1,7 +1,8 @@
 Support for Linux (Extremely Hard)
-==============================================================
+==================================
 
-.. image:: https://icons.iconarchive.com/icons/tatice/operating-systems/256/Linux-icon.png
+.. image:: ../../resources/images/linux-icon.png
+  :width: 256
 
 Support for Linux will be extremely hard. The difference between Linux and Windows/Mac wasn't just architectures,
 but also due to the different binaries for each Linux distribution.

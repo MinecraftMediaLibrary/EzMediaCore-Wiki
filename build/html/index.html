@@ -40,7 +40,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MinecraftMediaLibrary and VLC Media Player" href="vlc/vlc.html" /> 
+    <link rel="next" title="MinecraftMediaLibrary General Information" href="vlc/vlc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,24 +86,8 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Youtube Extraction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#method-events">Method Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/video/video-player.html">Introduction to Video Players</a></li>
 </ul>
 
@@ -174,14 +158,13 @@
             
   <div class="section" id="minecraftmedialibrary">
 <h1>MinecraftMediaLibrary<a class="headerlink" href="#minecraftmedialibrary" title="Permalink to this headline">¶</a></h1>
-<img alt="https://raw.githubusercontent.com/MinecraftMediaLibrary/MinecraftMediaLibrary/master/minecraftmedialibrary.png" src="https://raw.githubusercontent.com/MinecraftMediaLibrary/MinecraftMediaLibrary/master/minecraftmedialibrary.png" />
+<img alt="_images/minecraftmedialibrary.png" src="_images/minecraftmedialibrary.png" />
 <p><strong>MinecraftMediaLibrary</strong> is a library used to display media to players
 such as pictures, audio, videos, and other forms of media. It uses
 a variety of displays that are customizable depending on the user’s
 needs.</p>
-</div>
 <div class="section" id="importing-minecraftmedialibrary-into-a-project">
-<h1>Importing MinecraftMediaLibrary Into a Project<a class="headerlink" href="#importing-minecraftmedialibrary-into-a-project" title="Permalink to this headline">¶</a></h1>
+<h2>Importing MinecraftMediaLibrary Into a Project<a class="headerlink" href="#importing-minecraftmedialibrary-into-a-project" title="Permalink to this headline">¶</a></h2>
 <p>First, add <a class="reference external" href="https://jitpack.io/">Jitpack</a> because the repository is hosted there.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-TWF2ZW4=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-TWF2ZW4=" name="TWF2ZW4=" role="tab" tabindex="0">Maven</button><button aria-controls="panel-0-R3JhZGxlIChHcm9vdnkp" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tab" tabindex="-1">Gradle (Groovy)</button><button aria-controls="panel-0-R3JhZGxlIChLb3RsaW4p" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tab" tabindex="-1">Gradle (Kotlin)</button></div><div aria-labelledby="tab-0-TWF2ZW4=" class="sphinx-tabs-panel group-tab" id="panel-0-TWF2ZW4=" name="TWF2ZW4=" role="tabpanel" tabindex="0"><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;repository&gt;</span>
@@ -223,50 +206,46 @@ needs.</p>
 </div></div>
 </div>
 <div class="section" id="links-to-sections">
-<h1>Links to Sections<a class="headerlink" href="#links-to-sections" title="Permalink to this headline">¶</a></h1>
+<h2>Links to Sections<a class="headerlink" href="#links-to-sections" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary General Information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Youtube Extraction</a><ul>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code/youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code/youtube/youtube-extraction.html#method-events">Method Events</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#method-events">Method Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/video/video-player.html">Introduction to Video Players</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</div>
 </div>
 
 
@@ -275,7 +254,7 @@ needs.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="vlc/vlc.html" class="btn btn-neutral float-right" title="MinecraftMediaLibrary and VLC Media Player" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vlc/vlc.html" class="btn btn-neutral float-right" title="MinecraftMediaLibrary General Information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

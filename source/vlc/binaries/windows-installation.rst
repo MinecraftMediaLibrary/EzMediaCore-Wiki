@@ -1,7 +1,8 @@
 Support for Windows (Easy)
-==============================================================
+==========================
 
-.. image:: https://www.freeiconspng.com/thumbs/windows-icon-png/cute-ball-windows-icon-png-16.png
+.. image:: ../../resources/images/windows-icon.png
+  :width: 256
 
 Out of all the three main Operating Systems, Windows is probably the easiest. There are only two possible
 binaries that you could use for Windows — 32 bit and 64 bit. Therefore, I hosted the two zips on Github

@@ -1,5 +1,5 @@
 Loading VLC Binaries on Windows
-==============================================================
+===============================
 
 Windows uses .DLL extensions. When we find the plugin path folder,
 it is automatically set to the same path (no need for any relative

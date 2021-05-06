@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Youtube Extraction &mdash; MinecraftMediaLibrary Latest documentation</title>
+  <title>Retrieving Video/Audio from Youtube Videos &mdash; MinecraftMediaLibrary Latest documentation</title>
   
 
   
@@ -86,27 +86,15 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Youtube Extraction</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Retrieving Video/Audio from Youtube Videos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="extraction-setting.html">Instantiating an Extraction Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extracting-video">Extracting Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#important-warning">Important Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-events">Method Events</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#extracting-video">Extracting Video</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#extracting-audio">Extracting Audio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#important-warning">Important Warning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#method-events">Method Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extraction-setting.html">Instantiating an Extraction Setting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../video/video-player.html">Introduction to Video Players</a></li>
 </ul>
 
@@ -156,7 +144,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Youtube Extraction</li>
+      <li>Retrieving Video/Audio from Youtube Videos</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,8 +163,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="youtube-extraction">
-<h1>Youtube Extraction<a class="headerlink" href="#youtube-extraction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="retrieving-video-audio-from-youtube-videos">
+<h1>Retrieving Video/Audio from Youtube Videos<a class="headerlink" href="#retrieving-video-audio-from-youtube-videos" title="Permalink to this headline">¶</a></h1>
 <p>MinecraftMediaLibrary provides an easy way to extract video and audio
 from an existing Youtube link. This Youtube link can be either public or
 unlisted.</p>
@@ -231,12 +219,15 @@ code snippet:</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="extracting-video">
-<h1>Extracting Video<a class="headerlink" href="#extracting-video" title="Permalink to this headline">¶</a></h1>
+<h2>Extracting Video<a class="headerlink" href="#extracting-video" title="Permalink to this headline">¶</a></h2>
 <p>To extract video, call the <cite>downloadVideo()</cite> method of that specific
 instance. For example, if our instance was defined “extractor”, downloading
 the video would be as easy as:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// path -&gt; Direct path to Video File</span>
+<span class="kd">final</span> <span class="n">Path</span> <span class="n">path</span> <span class="o">=</span> <span class="n">extractor</span><span class="p">.</span><span class="na">downloadVideo</span><span class="p">();</span>
+</pre></div>
+</div>
 <p>The method returns a Path to the direct location of the video file.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -245,10 +236,14 @@ while depending on the video length and quality.</p>
 </div>
 </div>
 <div class="section" id="extracting-audio">
-<h1>Extracting Audio<a class="headerlink" href="#extracting-audio" title="Permalink to this headline">¶</a></h1>
+<h2>Extracting Audio<a class="headerlink" href="#extracting-audio" title="Permalink to this headline">¶</a></h2>
 <p>To extract audio, call the <cite>extractAudio()</cite> method of that specific
 instance. Again, if our instance was defined “extractor”, extraction
 would be as simple as:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// path -&gt; Direct path to Audio File</span>
+<span class="kd">final</span> <span class="n">Path</span> <span class="n">path</span> <span class="o">=</span> <span class="n">extractor</span><span class="p">.</span><span class="na">extractAudio</span><span class="p">();</span>
+</pre></div>
+</div>
 <p>The method returns a Path to the direct location of the audio file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -263,7 +258,7 @@ your audio file.</p>
 </div>
 </div>
 <div class="section" id="important-warning">
-<h1>Important Warning<a class="headerlink" href="#important-warning" title="Permalink to this headline">¶</a></h1>
+<h2>Important Warning<a class="headerlink" href="#important-warning" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The methods <cite>getVideo()</cite> and <cite>getAudio()</cite> will return null if the video/audio
@@ -271,7 +266,7 @@ has not been retrieved yet!</p>
 </div>
 </div>
 <div class="section" id="method-events">
-<h1>Method Events<a class="headerlink" href="#method-events" title="Permalink to this headline">¶</a></h1>
+<h2>Method Events<a class="headerlink" href="#method-events" title="Permalink to this headline">¶</a></h2>
 <p>You can override the methods <cite>onVideoDownload()</cite> and/or <cite>onAudioExtraction()</cite>
 if you would like to display some message right before the video is being
 downloaded and/or the audio is being extracted.</p>
@@ -291,6 +286,7 @@ downloaded and/or the audio is being extracted.</p>
   <span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
+</div>
 </div>
 </div>
 

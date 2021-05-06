@@ -1,5 +1,5 @@
-Youtube Extraction
-==============================================================
+Retrieving Video/Audio from Youtube Videos
+==========================================
 
 MinecraftMediaLibrary provides an easy way to extract video and audio
 from an existing Youtube link. This Youtube link can be either public or
@@ -61,13 +61,13 @@ code snippet:
   );
 
 Extracting Video
-==============================================================
+----------------
 
 To extract video, call the `downloadVideo()` method of that specific
 instance. For example, if our instance was defined "extractor", downloading
 the video would be as easy as:
 
-.. code-block.. java
+.. code-block:: java
 
   // path -> Direct path to Video File
   final Path path = extractor.downloadVideo();
@@ -79,13 +79,13 @@ The method returns a Path to the direct location of the video file.
   while depending on the video length and quality.
 
 Extracting Audio
-==============================================================
+----------------
 
 To extract audio, call the `extractAudio()` method of that specific
 instance. Again, if our instance was defined "extractor", extraction
 would be as simple as:
 
-.. code-block.. java
+.. code-block:: java
 
   // path -> Direct path to Audio File
   final Path path = extractor.extractAudio();
@@ -102,14 +102,14 @@ The method returns a Path to the direct location of the audio file.
   your audio file.
 
 Important Warning
-==============================================================
+-----------------
 
 .. warning::
   The methods `getVideo()` and `getAudio()` will return null if the video/audio
   has not been retrieved yet!
 
 Method Events
-==============================================================
+-------------
 
 You can override the methods `onVideoDownload()` and/or `onAudioExtraction()`
 if you would like to display some message right before the video is being

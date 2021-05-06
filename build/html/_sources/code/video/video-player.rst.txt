@@ -30,17 +30,26 @@ class.
    A frame callback and video player must have the correct parts associated with each other.
    This describes the correct classes to be used with each other.
 
-   | Frame Callback         | Video Player                |
-   | ---------------------- | --------------------------- |
+   +------------------------+-----------------------------+
+   | **Frame Callback**     | **Video Player**            |
+   +------------------------+-----------------------------+
    | MapDataCallback        | MapIntegratedPlayer         |
+   +------------------------+-----------------------------+
    | ChatCallback           | ChatIntegratedPlayer        |
+   +------------------------+-----------------------------+
    | EntityCloudCallback    | EntityCloudIntegratedPlayer |
+   +------------------------+-----------------------------+
    | BlockHighlightCallback | BlockHighlightPlayer        |
+   +------------------------+-----------------------------+
    | ScoreboardCallback     | ScoreboardIntegratedPlayer  |
+   +------------------------+-----------------------------+
 
-   **Experimental Players:**
+   **Experimental Players:** (work in progress, not ready for use)
 
-   | Frame Callback         | Video Player                |
-   | ---------------------- | --------------------------- |
+   +------------------------+-----------------------------+
+   | **Frame Callback**     | **Video Player**            |
+   +------------------------+-----------------------------+
    |                        | GifIntegratedPlayer         |
+   +------------------------+-----------------------------+
    |                        | ParallelVideoPlayer         |
+   +------------------------+-----------------------------+

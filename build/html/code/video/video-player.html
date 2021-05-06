@@ -91,18 +91,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Youtube Extraction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html#method-events">Method Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Video Players</a></li>
 </ul>
 
@@ -198,24 +191,50 @@ class.</p>
 <p class="admonition-title">Note</p>
 <p>A frame callback and video player must have the correct parts associated with each other.
 This describes the correct classes to be used with each other.</p>
-<div class="line-block">
-<div class="line">Frame Callback         | Video Player                |</div>
-<div class="line">———————- | ————————— |</div>
-<div class="line">MapDataCallback        | MapIntegratedPlayer         |</div>
-<div class="line">ChatCallback           | ChatIntegratedPlayer        |</div>
-<div class="line">EntityCloudCallback    | EntityCloudIntegratedPlayer |</div>
-<div class="line">BlockHighlightCallback | BlockHighlightPlayer        |</div>
-<div class="line">ScoreboardCallback     | ScoreboardIntegratedPlayer  |</div>
-</div>
-<p><strong>Experimental Players:</strong></p>
-<div class="line-block">
-<div class="line">Frame Callback         | Video Player                |</div>
-<div class="line">———————- | ————————— |</div>
-<div class="line-block">
-<div class="line">| GifIntegratedPlayer         |</div>
-<div class="line">| ParallelVideoPlayer         |</div>
-</div>
-</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Frame Callback</strong></p></td>
+<td><p><strong>Video Player</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>MapDataCallback</p></td>
+<td><p>MapIntegratedPlayer</p></td>
+</tr>
+<tr class="row-odd"><td><p>ChatCallback</p></td>
+<td><p>ChatIntegratedPlayer</p></td>
+</tr>
+<tr class="row-even"><td><p>EntityCloudCallback</p></td>
+<td><p>EntityCloudIntegratedPlayer</p></td>
+</tr>
+<tr class="row-odd"><td><p>BlockHighlightCallback</p></td>
+<td><p>BlockHighlightPlayer</p></td>
+</tr>
+<tr class="row-even"><td><p>ScoreboardCallback</p></td>
+<td><p>ScoreboardIntegratedPlayer</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Experimental Players:</strong> (work in progress, not ready for use)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Frame Callback</strong></p></td>
+<td><p><strong>Video Player</strong></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>GifIntegratedPlayer</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>ParallelVideoPlayer</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

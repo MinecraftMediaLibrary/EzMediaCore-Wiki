@@ -1,7 +1,8 @@
 Support for Mac (Medium)
-==============================================================
+========================
 
-.. image:: https://cdn2.iconfinder.com/data/icons/social-icons-color/512/apple-512.png
+.. image:: ../../resources/images/apple-icon.webp
+  :width: 256
 
 Support for Mac is similar to support on Windows, however, it is a bit harder. Mac OS systems store their
 apps in folders with a .APP extension, but are still folders. For example, if you had Chrome as an app,

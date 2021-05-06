@@ -1,5 +1,5 @@
 Instantiating an Extraction Setting
-==============================================================
+===================================
 
 To instantiate an ExtractionSetting, you need four arguments.
 
@@ -35,4 +35,4 @@ the requirement that it must be greater or equal to 0.
   */
   final ExtractionSetting setting = new ExtractionSetting(160_000, 1, 44_100, 50);
 
-There is also a builder if you need to use it, but typically four arguments is enough. 
+There is also a builder if you need to use it, but typically four arguments is enough.

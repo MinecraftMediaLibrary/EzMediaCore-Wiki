@@ -1,7 +1,7 @@
 MinecraftMediaLibrary
-==============================================================
+=====================
 
-.. image:: https://raw.githubusercontent.com/MinecraftMediaLibrary/MinecraftMediaLibrary/master/minecraftmedialibrary.png
+.. image:: resources/images/minecraftmedialibrary.png
 
 **MinecraftMediaLibrary** is a library used to display media to players
 such as pictures, audio, videos, and other forms of media. It uses
@@ -9,7 +9,7 @@ a variety of displays that are customizable depending on the user's
 needs.
 
 Importing MinecraftMediaLibrary Into a Project
-==============================================================
+----------------------------------------------
 
 First, add `Jitpack <https://jitpack.io/>`__ because the repository is hosted there.
 
@@ -72,24 +72,16 @@ Then, add the actual library repo itself.
         }
 
 Links to Sections
-==============================================================
+-----------------
 
 .. toctree::
-    :maxdepth: 2
 
-    vlc/vlc.rst
-    vlc/binaries/windows-installation.rst
-    vlc/binaries/mac-installation.rst
-    vlc/binaries/linux-installation.rst
-    vlc/load/windows-load.rst
-    vlc/load/mac-load.rst
-    vlc/load/linux-load.rst
-    code/youtube/youtube-extraction.rst
-    code/youtube/extraction-setting.rst
-    code/video/video-player.rst
+    vlc/vlc
+    code/youtube/youtube-extraction
+    code/video/video-player
 
 Indices and Tables
-==============================================================
+------------------
 
 * :ref:`genindex`
 * :ref:`search`

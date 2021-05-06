@@ -96,7 +96,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#loading-vlc-binaries">Loading VLC Binaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mmlnativediscovery">MMLNativeDiscovery</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="load/windows-load.html">Loading VLC Binaries on Windows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="load/mac-load.html">Loading VLC Binaries on Mac</a></li>
 <li class="toctree-l3"><a class="reference internal" href="load/linux-load.html">Loading VLC Binaries on Linux</a></li>
@@ -250,10 +250,11 @@ the possible directories. The class which uses ServiceLoader can be found
 According to StackOverflow, ServiceLoader will only find certain classes loaded by the current classloader thread. After
 a load of debugging, I’ve finally found that due to how the Minecraft server is running on a different classloader thread
 from the actual library, it can find the proper paths. Thus, I had to implement my own mini-NativeDiscovery implementation
-to try and load VLC.</p>
+to try and load VLC. This discovery method is known as <strong>MinecraftMediaLibrary NativeDiscovery</strong>, or <strong>MMLNativeDiscovery</strong>
+in short.</p>
 </div>
-<div class="section" id="implementing-my-own-solution-for-nativediscovery">
-<h2>Implementing My Own Solution for NativeDiscovery<a class="headerlink" href="#implementing-my-own-solution-for-nativediscovery" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mmlnativediscovery">
+<h2>MMLNativeDiscovery<a class="headerlink" href="#mmlnativediscovery" title="Permalink to this headline">¶</a></h2>
 <p>I created separate abstractions for each module. In order to load VLC binaries, I created a method which takes in
 a directory and attempts to load VLC from that directory. It uses recursion to locate the plugins folder and the folder
 containing core libraries of VLC (such as libvlc, libvlccore, etc). The strategy/algorithm can be found

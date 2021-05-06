@@ -81,10 +81,11 @@ the possible directories. The class which uses ServiceLoader can be found
 According to StackOverflow, ServiceLoader will only find certain classes loaded by the current classloader thread. After
 a load of debugging, I've finally found that due to how the Minecraft server is running on a different classloader thread
 from the actual library, it can find the proper paths. Thus, I had to implement my own mini-NativeDiscovery implementation
-to try and load VLC.
+to try and load VLC. This discovery method is known as **MinecraftMediaLibrary NativeDiscovery**, or **MMLNativeDiscovery**
+in short.
 
-Implementing My Own Solution for NativeDiscovery
-------------------------------------------------
+MMLNativeDiscovery
+------------------
 
 I created separate abstractions for each module. In order to load VLC binaries, I created a method which takes in
 a directory and attempts to load VLC from that directory. It uses recursion to locate the plugins folder and the folder

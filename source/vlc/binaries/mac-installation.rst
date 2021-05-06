@@ -19,8 +19,8 @@ I uploaded the DMGs onto Github as a mirror for users to download. Unlike Window
 most Mac Systems these days are 64-bit. Instead, I provided two versions — arm64 and intel64 because the binaries
 of these architectures were different.
 
-`ARM64 Version <https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/macos-arm64>`_
+`ARM64 Version <https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/macos-arm64>`__
 
-`INTEL64 Version <https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/macos-intel64>`_
+`INTEL64 Version <https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/macos-intel64>`__
 
 Currently, MinecraftMediaLibrary supports Mac. There are no plans for removing support in the near future.

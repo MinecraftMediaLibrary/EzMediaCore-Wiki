@@ -13,10 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
 
   
   
@@ -36,15 +33,14 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
-        <script src="_static/sphinx_tabs/tabs.js"></script>
+        <script src="_static/tabs.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MinecraftMediaLibrary and VLC Media Player" href="vlc.html" /> 
+    <link rel="next" title="MinecraftMediaLibrary and VLC Media Player" href="vlc/vlc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,11 +86,24 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#what-is-vlc-media-player">What is VLC Media Player?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#how-does-minecraftmedialibrary-use-vlc-media-player">How Does MinecraftMediaLibrary Use VLC Media Player?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#great-but-vlc-uses-binaries-right">Great, But VLC Uses Binaries Right?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#links-to-sections">Links to Sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Youtube Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#method-events">Method Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
 </ul>
 
             
@@ -174,104 +183,79 @@ needs.</p>
 <h1>Importing MinecraftMediaLibrary Into a Project<a class="headerlink" href="#importing-minecraftmedialibrary-into-a-project" title="Permalink to this headline">¶</a></h1>
 <p>First, add <a class="reference external" href="https://jitpack.io/">Jitpack</a> because the repository is hosted there.</p>
 <div class="sphinx-tabs docutils container">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-TWF2ZW4= docutils container">
-<div class="docutils container">
-<p>Maven</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="docutils container">
-<p>Gradle (Groovy)</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="docutils container">
-<p>Gradle (Kotlin)</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWF2ZW4= active docutils container">
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;repository&gt;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-TWF2ZW4=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-TWF2ZW4=" name="TWF2ZW4=" role="tab" tabindex="0">Maven</button><button aria-controls="panel-0-R3JhZGxlIChHcm9vdnkp" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tab" tabindex="-1">Gradle (Groovy)</button><button aria-controls="panel-0-R3JhZGxlIChLb3RsaW4p" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tab" tabindex="-1">Gradle (Kotlin)</button></div><div aria-labelledby="tab-0-TWF2ZW4=" class="sphinx-tabs-panel group-tab" id="panel-0-TWF2ZW4=" name="TWF2ZW4=" role="tabpanel" tabindex="0"><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;repository&gt;</span>
    <span class="nt">&lt;id&gt;</span>jitpack.io<span class="nt">&lt;/id&gt;</span>
    <span class="nt">&lt;url&gt;</span>https://jitpack.io<span class="nt">&lt;/url&gt;</span>
 <span class="nt">&lt;/repository&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
+</div><div aria-labelledby="tab-0-R3JhZGxlIChHcm9vdnkp" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tabpanel" tabindex="0"><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://jitpack.io&#39;</span> <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
+</div><div aria-labelledby="tab-0-R3JhZGxlIChLb3RsaW4p" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tabpanel" tabindex="0"><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
    <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">(</span><span class="s">&quot;https://jitpack.io&quot;</span><span class="p">)</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <p>Then, add the actual library repo itself.</p>
 <div class="sphinx-tabs docutils container">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-TWF2ZW4= docutils container">
-<div class="docutils container">
-<p>Maven</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="docutils container">
-<p>Gradle (Groovy)</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="docutils container">
-<p>Gradle (Kotlin)</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWF2ZW4= active docutils container">
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-TWF2ZW4=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-TWF2ZW4=" name="TWF2ZW4=" role="tab" tabindex="0">Maven</button><button aria-controls="panel-1-R3JhZGxlIChHcm9vdnkp" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tab" tabindex="-1">Gradle (Groovy)</button><button aria-controls="panel-1-R3JhZGxlIChLb3RsaW4p" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tab" tabindex="-1">Gradle (Kotlin)</button></div><div aria-labelledby="tab-1-TWF2ZW4=" class="sphinx-tabs-panel group-tab" id="panel-1-TWF2ZW4=" name="TWF2ZW4=" role="tabpanel" tabindex="0"><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
    <span class="nt">&lt;groupId&gt;</span>com.github.minecraftmedialibrary<span class="nt">&lt;/groupId&gt;</span>
    <span class="nt">&lt;artifactId&gt;</span>minecraftmedialibrary<span class="nt">&lt;/artifactId&gt;</span>
    <span class="nt">&lt;version&gt;</span>master-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="o">{</span>
+</div><div aria-labelledby="tab-1-R3JhZGxlIChHcm9vdnkp" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tabpanel" tabindex="0"><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="o">{</span>
    <span class="n">implementation</span> <span class="s1">&#39;com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT&#39;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="p">{</span>
+</div><div aria-labelledby="tab-1-R3JhZGxlIChLb3RsaW4p" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tabpanel" tabindex="0"><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="p">{</span>
    <span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="section" id="links-to-sections">
 <h1>Links to Sections<a class="headerlink" href="#links-to-sections" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#what-is-vlc-media-player">What is VLC Media Player?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#how-does-minecraftmedialibrary-use-vlc-media-player">How Does MinecraftMediaLibrary Use VLC Media Player?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#great-but-vlc-uses-binaries-right">Great, But VLC Uses Binaries Right?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vlc.html#links-to-sections">Links to Sections</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="native-discovery/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="native-discovery/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="native-discovery/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Youtube Extraction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html#method-events">Method Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
 </ul>
 </div>
 </div>
@@ -289,7 +273,7 @@ needs.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="vlc.html" class="btn btn-neutral float-right" title="MinecraftMediaLibrary and VLC Media Player" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vlc/vlc.html" class="btn btn-neutral float-right" title="MinecraftMediaLibrary and VLC Media Player" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

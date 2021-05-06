@@ -7,7 +7,7 @@ Support for Linux will be extremely hard. The difference between Linux and Windo
 but also due to the different binaries for each Linux distribution.
 
 I originally created a huge list of URLs to mirrors for Linux packages for different operating systems (and even
-hosted one on Github myself `right here <https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/linux>`_)
+hosted one on Github myself `right here <https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/linux>`__)
 however, newer problems arose.
 
 As you probably know, Linux uses packages to install software. These packages come in various types, such as tgz, txz,
@@ -21,7 +21,7 @@ that you must enter after. This is not ideal because on shared server hosting (s
 doubt the server provider will give you the password or root. The solution was to install the package without root, and...
 it isn't easy.
 
-One proposed solution I had was about using `JuNest <https://github.com/fsquillace/junest>`_. However, it lead to many problems
+One proposed solution I had was about using `JuNest <https://github.com/fsquillace/junest>`__. However, it lead to many problems
 such as restrictions in the OS, the app itself actually needing to download certain dependencies before being able to run, etc.
 It posed multiple restrictions.
 
@@ -35,4 +35,4 @@ Currently, I am stuck. I have no idea of any solutions to possibly solve this. I
 solution but they just led to more and more problems. If you have a suggestion, feel free to tell me. This also means that
 support for Linux is not available at the moment. If you want to see my thoughts on how I tried to pull out some algorithm,
 take a look
-`here <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/2c80ff5441e2108fba6e365dd0709ac95a122713/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/vlc/os/linux/pkg/PackageBase.java#L36>`_
+`here <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/2c80ff5441e2108fba6e365dd0709ac95a122713/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/vlc/os/linux/pkg/PackageBase.java#L36>`__

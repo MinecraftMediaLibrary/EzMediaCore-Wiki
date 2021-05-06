@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Youtube Extraction &mdash; MinecraftMediaLibrary Latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Instantiating an Extraction Setting" href="extraction-setting.html" />
+    <link rel="prev" title="Loading VLC Binaries on Linux" href="../../vlc/load/linux-load.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> MinecraftMediaLibrary
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#vlc-media-player">VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#implementing-vlc-into-minecraftmedialibrary">Implementing VLC Into MinecraftMediaLibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#handling-vlc-binaries">Handling VLC Binaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#loading-vlc-binaries">Loading VLC Binaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html#implementing-my-own-solution-for-nativediscovery">Implementing My Own Solution for NativeDiscovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/windows-installation.html">Support for Windows (Easy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/mac-installation.html">Support for Mac (Medium)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/binaries/linux-installation.html">Support for Linux (Extremely Hard)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/windows-load.html">Loading VLC Binaries on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/mac-load.html">Loading VLC Binaries on Mac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/load/linux-load.html">Loading VLC Binaries on Linux</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Youtube Extraction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extraction-setting.html">Instantiating an Extraction Setting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#extracting-video">Extracting Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#important-warning">Important Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#method-events">Method Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extraction-setting.html">Instantiating an Extraction Setting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MinecraftMediaLibrary</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Youtube Extraction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/code/youtube/youtube-extraction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="youtube-extraction">
+<h1>Youtube Extraction<a class="headerlink" href="#youtube-extraction" title="Permalink to this headline">¶</a></h1>
+<p>MinecraftMediaLibrary provides an easy way to extract video and audio
+from an existing Youtube link. This Youtube link can be either public or
+unlisted.</p>
+<p>To start off, we will be using the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/extractor/YoutubeExtraction.java">YoutubeExtraction</a>
+class. To instantiate one, we need three parameters: A URL directly to
+the Youtube Link, a directory to download the files, and an
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/extractor/ExtractionSetting.java">ExtractionSetting</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Youtube link can be formatted in anyway such that the Youtube id is
+visible. In most cases, just copying the link (and it can be any format)
+will be fine. MinecraftMediaLibrary is able to handle and extract the ids
+accordingly.</p>
+</div>
+<p>The Youtube URL is the link to the Youtube video.</p>
+<p>The directory is the directory for which the video and audio files should be stored.</p>
+<p>And finally the ExtractionSetting is a set of attributes that MinecraftMediaLibrary
+will use when extracting audio.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about instantiating an ExtractionSetting, take a look at:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="extraction-setting.html">Instantiating an Extraction Setting</a></li>
+</ul>
+</div>
+</div>
+<p>As for an example of instantiating a new YoutubeExtraction, take a look at this
+code snippet:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">160_000 -&gt; Bitrate of Audio</span>
+<span class="cm">1 -&gt; Channels for Audio</span>
+<span class="cm">44_100 -&gt; Sampling Rate of Audio</span>
+<span class="cm">50 -&gt; Volume of Audio</span>
+
+<span class="cm">*/</span>
+<span class="kd">final</span> <span class="n">ExtractionSetting</span> <span class="n">setting</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExtractionSetting</span><span class="p">(</span><span class="mi">160_000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">44_100</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+
+<span class="cm">&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot; -&gt; Youtube Link</span>
+<span class="cm">&quot;C://video&quot; -&gt; Path to Directory</span>
+<span class="cm">settings -&gt; Extraction Settings (defined above)</span>
+
+<span class="cm">*/</span>
+<span class="kd">final</span> <span class="n">YoutubeExtraction</span> <span class="n">extractor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">YoutubeExtraction</span><span class="p">(</span>
+  <span class="s">&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span><span class="p">,</span>
+  <span class="s">&quot;C://video&quot;</span><span class="p">,</span>
+  <span class="n">settings</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extracting-video">
+<h1>Extracting Video<a class="headerlink" href="#extracting-video" title="Permalink to this headline">¶</a></h1>
+<p>To extract video, call the <cite>downloadVideo()</cite> method of that specific
+instance. For example, if our instance was defined “extractor”, downloading
+the video would be as easy as:</p>
+<p>The method returns a Path to the direct location of the video file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is strongly recommended you run this method asynchronous! It may take a
+while depending on the video length and quality.</p>
+</div>
+</div>
+<div class="section" id="extracting-audio">
+<h1>Extracting Audio<a class="headerlink" href="#extracting-audio" title="Permalink to this headline">¶</a></h1>
+<p>To extract audio, call the <cite>extractAudio()</cite> method of that specific
+instance. Again, if our instance was defined “extractor”, extraction
+would be as simple as:</p>
+<p>The method returns a Path to the direct location of the audio file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the video file was not downloaded first, it will be automatically
+downloaded first during the process.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is strongly recommended you run this method asynchronous! It may take a
+while depending on the video length and attributes that you want to use for
+your audio file.</p>
+</div>
+</div>
+<div class="section" id="important-warning">
+<h1>Important Warning<a class="headerlink" href="#important-warning" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The methods <cite>getVideo()</cite> and <cite>getAudio()</cite> will return null if the video/audio
+has not been retrieved yet!</p>
+</div>
+</div>
+<div class="section" id="method-events">
+<h1>Method Events<a class="headerlink" href="#method-events" title="Permalink to this headline">¶</a></h1>
+<p>You can override the methods <cite>onVideoDownload()</cite> and/or <cite>onAudioExtraction()</cite>
+if you would like to display some message right before the video is being
+downloaded and/or the audio is being extracted.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">YoutubeExtraction</span> <span class="n">extractor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">YoutubeExtraction</span><span class="p">(</span>
+  <span class="s">&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span><span class="p">,</span>
+  <span class="s">&quot;C://video&quot;</span><span class="p">,</span>
+  <span class="n">settings</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoDownload</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The video is being downloaded!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAudioExtraction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The audio is being extracted!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="extraction-setting.html" class="btn btn-neutral float-right" title="Instantiating an Extraction Setting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../vlc/load/linux-load.html" class="btn btn-neutral float-left" title="Loading VLC Binaries on Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, PulseBeat_02.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

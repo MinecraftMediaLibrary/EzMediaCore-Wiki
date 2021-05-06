@@ -11,7 +11,7 @@ needs.
 Importing MinecraftMediaLibrary Into a Project
 ==============================================================
 
-First, add `Jitpack <https://jitpack.io/>`_ because the repository is hosted there.
+First, add `Jitpack <https://jitpack.io/>`__ because the repository is hosted there.
 
 .. tabs::
 
@@ -75,9 +75,17 @@ Links to Sections
 ==============================================================
 
 .. toctree::
-   :maxdepth: 0
+    :maxdepth: 2
 
-   vlc
+    vlc/vlc.rst
+    vlc/binaries/windows-installation.rst
+    vlc/binaries/mac-installation.rst
+    vlc/binaries/linux-installation.rst
+    vlc/load/windows-load.rst
+    vlc/load/mac-load.rst
+    vlc/load/linux-load.rst
+    code/youtube/youtube-extraction.rst
+    code/youtube/extraction-setting.rst
 
 Indices and Tables
 ==============================================================

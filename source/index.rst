@@ -86,6 +86,7 @@ Links to Sections
     vlc/load/linux-load.rst
     code/youtube/youtube-extraction.rst
     code/youtube/extraction-setting.rst
+    code/video/video-player.rst
 
 Indices and Tables
 ==============================================================

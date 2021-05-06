@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Support for Mac (Medium) &mdash; MinecraftMediaLibrary Latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Support for Linux (Extremely Hard)" href="linux-installation.html" />
+    <link rel="prev" title="Support for Windows (Easy)" href="windows-installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> MinecraftMediaLibrary
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../vlc.html">MinecraftMediaLibrary and VLC Media Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc.html#what-is-vlc-media-player">What is VLC Media Player?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc.html#how-does-minecraftmedialibrary-use-vlc-media-player">How Does MinecraftMediaLibrary Use VLC Media Player?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc.html#great-but-vlc-uses-binaries-right">Great, But VLC Uses Binaries Right?</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../vlc.html#links-to-sections">Links to Sections</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="windows-installation.html">Support for Windows (Easy)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Support for Mac (Medium)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-installation.html">Support for Linux (Extremely Hard)</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MinecraftMediaLibrary</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../vlc.html">MinecraftMediaLibrary and VLC Media Player</a> &raquo;</li>
+        
+      <li>Support for Mac (Medium)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/native-discovery/binaries/mac-installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="support-for-mac-medium">
+<h1>Support for Mac (Medium)<a class="headerlink" href="#support-for-mac-medium" title="Permalink to this headline">¶</a></h1>
+<img alt="https://cdn2.iconfinder.com/data/icons/social-icons-color/512/apple-512.png" src="https://cdn2.iconfinder.com/data/icons/social-icons-color/512/apple-512.png" />
+<p>Support for Mac is similar to support on Windows, however, it is a bit harder. Mac OS systems store their
+apps in folders with a .APP extension, but are still folders. For example, if you had Chrome as an app,
+the application folder would be named “Chrome.APP”, and will have a folder of contents used to run the
+software. The same goes with VLC Media Player. However, I encountered an issue that I couldn’t simply
+just zip up the folder for the application contents. Mac has this odd hash or certificate check which
+didn’t allow the user to run/use the app even if the folder was named .APP and had non-corrupted contents.</p>
+<p>Instead, I had to resort to DMGs or disk files on Mac. I would run a native command to mount the disk file
+onto the PC. Then, I recursively copied the folder contents of the VLC app over to the dependency folder.
+That way, the operating system was able to identify the app as valid and allowed execution/use of the binaries
+and app itself.</p>
+<p>I uploaded the DMGs onto Github as a mirror for users to download. Unlike Windows which had 32-bit and 64-bit,
+most Mac Systems these days are 64-bit. Instead, I provided two versions — arm64 and intel64 because the binaries
+of these architectures were different.</p>
+<p><a class="reference external" href="https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/macos-arm64">ARM64 Version</a></p>
+<p><a class="reference external" href="https://github.com/MinecraftMediaLibrary/VLC-Release-Mirror/tree/master/macos-intel64">INTEL64 Version</a></p>
+<p>Currently, MinecraftMediaLibrary supports Mac. There are no plans for removing support in the near future.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="linux-installation.html" class="btn btn-neutral float-right" title="Support for Linux (Extremely Hard)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="windows-installation.html" class="btn btn-neutral float-left" title="Support for Windows (Easy)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, PulseBeat_02.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

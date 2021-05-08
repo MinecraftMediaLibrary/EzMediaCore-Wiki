@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; MinecraftMediaLibrary Latest documentation</title>
+  <title>Map Video Players &mdash; MinecraftMediaLibrary Latest documentation</title>
   
 
   
@@ -38,7 +38,8 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Introduction to Video Players" href="video-player.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,10 +84,20 @@
               
             
             
-              <ul>
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">History of MinecraftMediaLibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video-player.html">Introduction to Video Players</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="video-player.html">Introduction to Video Players</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Map Video Players</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-map-callback">Creating a Map Callback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-map-video-players">Creating the Map Video Players</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -135,7 +146,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+          <li><a href="video-player.html">Introduction to Video Players</a> &raquo;</li>
+        
+      <li>Map Video Players</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -154,12 +167,137 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="map-video-players">
+<h1>Map Video Players<a class="headerlink" href="#map-video-players" title="Permalink to this headline">¶</a></h1>
+<p>Map Video Players, as the name stands, are videos that are played
+on maps. Maps are displayable on itemframes, meaning that players
+are able to place itemframes on certain blocks, set the maps onto
+them, and watch video playback then.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about maps, visit the following:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../map.html#displaying-pixels-on-maps">Displaying Pixels on Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../map.html#minecraft-map-palette">Minecraft Map Palette</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../map.html#the-power-of-dithering">The Power of Dithering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../map.html#speed-and-quality-of-dithering-algorithms">Speed and Quality of Dithering Algorithms</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>Maps are very great at delivering videos. Their quality from dithering
+is considered even better than the quality used for entity name tags
+even though they have limited color. Dithering allows for this magic
+to happen.</p>
+<p>When retreiving a map in normal Minecraft, typically one would type
+the following command:</p>
+<p>Replace [id] with the specific map id you would like to retreive. For
+example, getting a map with id 0 would be the following:</p>
+<div class="section" id="creating-a-map-callback">
+<h2>Creating a Map Callback<a class="headerlink" href="#creating-a-map-callback" title="Permalink to this headline">¶</a></h2>
+<p>As for any video player, you must specific the callback that the video
+player will use. To do this, we will use the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/map/MapDataCallback.java">MapDataCallback</a>
+class. To initialize the class, it requires an instance of our library,
+the viewers, the itemframe width/height, the video width (in pixels),
+the first map to use, and the delay between frames. A builder is
+provided for easier use.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">Suppose we wanted to play a video on a 5x5 itemframe screen.</span>
+<span class="cm">The video has a width in pixels of 640 pixels.</span>
+
+<span class="cm">setViewers(null) -&gt; Set to null for everybody. Otherwise set</span>
+<span class="cm">to the viewers that see the video</span>
+
+<span class="cm">setMap(0) -&gt; Set the base map. In this case, we are using 5x5</span>
+<span class="cm">itemframes, so we have 25 itemframes or 25 maps. That means</span>
+<span class="cm">that the ids occupied will be set from 0 - 24 (25 possible</span>
+<span class="cm">maps).</span>
+
+<span class="cm">setItemframeWidth(5) -&gt; Sets the itemframe width to 5 blocks.</span>
+
+<span class="cm">setItemframeHeight(5) -&gt; Sets the itemframe height to 5 blocks.</span>
+
+<span class="cm">setVideoWidth(640) -&gt; Sets the video width to 640 pixels.</span>
+
+<span class="cm">setDelay(0) -&gt; Sets the delay between each frame to be 0 milliseconds.</span>
+
+<span class="cm">setDitherHolder(new FilterLiteDither()) -&gt; Sets the dithering algorithm to</span>
+<span class="cm">be Filter Lite algorithm. For a list of algorithms please look at the</span>
+<span class="cm">dithering documentation.</span>
+
+<span class="cm">*/</span>
+<span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="n">MapDataCallback</span> <span class="n">callback</span> <span class="o">=</span>
+    <span class="n">MapDataCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+      <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setMap</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setItemframeWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setItemframeHeight</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setVideoWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setDitherHolder</span><span class="p">(</span><span class="k">new</span> <span class="n">FilterLiteDither</span><span class="p">())</span>
+      <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once we are done creating the callback, we can now try and create the actual
+video player!</p>
+</div>
+<div class="section" id="creating-the-map-video-players">
+<h2>Creating the Map Video Players<a class="headerlink" href="#creating-the-map-video-players" title="Permalink to this headline">¶</a></h2>
+<p>Now that we created our callback, we can use that to create our video player.
+We will use the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/map/MapIntegratedPlayer.java">MapIntegratedPlayer</a>
+for this. To instantiate this class, we will just pass in a
+library instance, a url to the media (can be Youtube or a File),
+the callback we defined before, and also the width/height of the video.
+Take a look at this example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="n">MapDataCallback</span> <span class="n">callback</span> <span class="o">=</span>
+    <span class="n">MapDataCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+      <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setMap</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setItemframeWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setItemframeHeight</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setVideoWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="na">setDitherHolder</span><span class="p">(</span><span class="k">new</span> <span class="n">FilterLiteDither</span><span class="p">())</span>
+      <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+
+<span class="cm">Using the example above, assume our video is located in</span>
+<span class="cm">C://video.mp4 and has a width of 640 pixels, and height of</span>
+<span class="cm">480 pixels.</span>
+
+<span class="cm">*/</span>
+<span class="n">MapIntegratedPlayer</span> <span class="n">player</span> <span class="o">=</span>
+  <span class="n">MapIntegratedPlayer</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setUrl</span><span class="p">(</span><span class="s">&quot;C://video.mp4&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setCallback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setHeight</span><span class="p">(</span><span class="mi">480</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>After that, we are done! Just use the control methods on the video to
+play, pause, or release.</p>
+</div>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="video-player.html" class="btn btn-neutral float-left" title="Introduction to Video Players" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

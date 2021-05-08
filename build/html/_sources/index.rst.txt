@@ -76,6 +76,8 @@ Links to Sections
 
 .. toctree::
 
+    history
+    map
     vlc/vlc
     code/youtube/youtube-extraction
     code/video/video-player

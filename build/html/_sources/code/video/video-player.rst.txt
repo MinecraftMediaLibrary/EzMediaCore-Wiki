@@ -1,5 +1,5 @@
 Introduction to Video Players
-==============================================================
+=============================
 
 Video Players in MinecraftMediaLibrary are one of the most powerful features
 in the library.
@@ -53,3 +53,7 @@ class.
    +------------------------+-----------------------------+
    |                        | ParallelVideoPlayer         |
    +------------------------+-----------------------------+
+
+   .. toctree::
+
+       maps

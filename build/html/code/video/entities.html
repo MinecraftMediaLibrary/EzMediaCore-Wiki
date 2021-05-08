@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Entity Video Players &mdash; MinecraftMediaLibrary Latest documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Map Video Players" href="maps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> MinecraftMediaLibrary
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../history.html">History of MinecraftMediaLibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../entity.html">Entity Nametags in a Nutshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="video-player.html">Introduction to Video Players</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="maps.html">Map Video Players</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Entity Video Players</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../entity.html">Entity Nametags in a Nutshell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-entity-callback">Creating an Entity Callback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-entity-video-player">Creating an Entity Video Player</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MinecraftMediaLibrary</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="video-player.html">Introduction to Video Players</a> &raquo;</li>
+        
+      <li>Entity Video Players</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/code/video/entities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="entity-video-players">
+<h1>Entity Video Players<a class="headerlink" href="#entity-video-players" title="Permalink to this headline">¶</a></h1>
+<p>Entity video players are video players which take advantage of entity
+name tags to display video frames. It acts as a solid way to play media
+while having the less likely-hood of timing out players.</p>
+<p>For more information about entities, visit the following:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../entity.html">Entity Nametags in a Nutshell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../entity.html#usage-of-entities">Usage of Entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../entity.html#downsides-of-entities">Downsides of Entities</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>As for summoning mobs. An in game command would be the /summon option.
+However, MinecraftMediaLibrary has all the mob spawns handled for you.</p>
+<div class="section" id="creating-an-entity-callback">
+<h2>Creating an Entity Callback<a class="headerlink" href="#creating-an-entity-callback" title="Permalink to this headline">¶</a></h2>
+<p>Creating an entity callback requires usage of the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudCallback.java">EntityCloudCallback</a>
+class. Creating the class requires multiple arguments. These arguments
+include an instance of the library, the viewers, the entity width/height,
+the delay between frames, the location at which you want to spawn the
+entity, and also what type of entity you want to use.</p>
+<p>Currently, MinecraftMediaLibrary only supports ArmorStands and
+AreaEffectClouds, however, updates may change this fact. For a code
+example, take a look here when we use the builder:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">Suppose our video was resolution 640x480 pixels. This is how</span>
+<span class="cm">we would display it.</span>
+
+<span class="cm">setViewers(null) -&gt; Set to null if you want everyone to see it.</span>
+<span class="cm">Otherwise set it to the players you want to see.</span>
+
+<span class="cm">setEntityWidth(640) -&gt; Sets the entity width to be 640 entities.</span>
+
+<span class="cm">setEntityHeight(480) -&gt; Sets the entity height to be 480 entities.</span>
+
+<span class="cm">setDelay(40) -&gt; Sets the delay to be 40 milliseconds.</span>
+
+<span class="cm">setLocation(player.getLocation()) -&gt; Sets the location of the</span>
+<span class="cm">screen to be the location of the player.</span>
+
+<span class="cm">setType(ScreenEntityType.AREA_EFFECT_CLOUD) -&gt; Sets the type of</span>
+<span class="cm">entity to be AREA_EFFECT_CLOUD. Take a look at the enum for other</span>
+<span class="cm">options.</span>
+
+<span class="cm">*/</span>
+<span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="kd">final</span> <span class="n">EntityCloudCallback</span> <span class="n">callback</span> <span class="o">=</span>
+  <span class="n">EntityCloudCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setEntityWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setEntityHeight</span><span class="p">(</span><span class="mi">480</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="na">getLocation</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="n">ScreenEntityType</span><span class="p">.</span><span class="na">AREA_EFFECT_CLOUD</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Once we are done creating the callback, let’s create the actual
+video player for entities.</p>
+</div>
+<div class="section" id="creating-an-entity-video-player">
+<h2>Creating an Entity Video Player<a class="headerlink" href="#creating-an-entity-video-player" title="Permalink to this headline">¶</a></h2>
+<p>After creating our callback, we can use that for our video
+interface. To do this, we will use the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudIntegratedPlayer.java">EntityCloudIntegratedPlayer</a>
+class. Instantiating one requires an instance of the library, the mrl (either can be
+a Youtube url or a file), a callback, a location, and a width/height. For a code
+example, we will use the builder:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="kd">final</span> <span class="n">EntityCloudCallback</span> <span class="n">callback</span> <span class="o">=</span>
+  <span class="n">EntityCloudCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setEntityWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setEntityHeight</span><span class="p">(</span><span class="mi">480</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setLocation</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="na">getLocation</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="n">ScreenEntityType</span><span class="p">.</span><span class="na">AREA_EFFECT_CLOUD</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">))</span>
+
+<span class="cm">/*</span>
+
+<span class="cm">Suppose from above, the video is 640x480 pixels and we are using the player&#39;s</span>
+<span class="cm">location.</span>
+
+<span class="cm">setUrl(&quot;C://video.mp4&quot;) -&gt; Sets the mrl to be the path of the video.</span>
+
+<span class="cm">setCallback(callback) -&gt; Sets the callback for the video player.</span>
+
+<span class="cm">setWidth(640) -&gt; Sets the width to be 640 pixels.</span>
+
+<span class="cm">setHeight(480) -&gt; Sets the height to be 480 pixels.</span>
+
+<span class="cm">*/</span>
+<span class="kd">final</span> <span class="n">EntityCloudIntegratedPlayer</span> <span class="n">player</span> <span class="o">=</span>
+  <span class="n">EntityCloudIntegratedPlayer</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">setUrl</span><span class="p">(</span><span class="s">&quot;C://video.mp4&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">setCallback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">setWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">setHeight</span><span class="p">(</span><span class="mi">480</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>After that, we are done! Call the proper control methods on the
+video player to play, pause, or release.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="maps.html" class="btn btn-neutral float-left" title="Map Video Players" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, PulseBeat_02.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -57,3 +57,4 @@ class.
    .. toctree::
 
        maps
+       entities

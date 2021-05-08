@@ -39,6 +39,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Entity Video Players" href="entities.html" />
     <link rel="prev" title="Introduction to Video Players" href="video-player.html" /> 
 </head>
 
@@ -94,9 +95,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Map Video Players</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-map-callback">Creating a Map Callback</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#creating-the-map-video-players">Creating the Map Video Players</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-map-video-player">Creating a Map Video Player</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="entities.html">Entity Video Players</a></li>
 </ul>
 </li>
 </ul>
@@ -195,8 +197,14 @@ even though they have limited color. Dithering allows for this magic
 to happen.</p>
 <p>When retreiving a map in normal Minecraft, typically one would type
 the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">give</span> <span class="nd">@p</span> <span class="n">filled_map</span><span class="p">{</span><span class="nb">map</span><span class="p">:[</span><span class="nb">id</span><span class="p">]}</span>
+</pre></div>
+</div>
 <p>Replace [id] with the specific map id you would like to retreive. For
 example, getting a map with id 0 would be the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">give</span> <span class="nd">@p</span> <span class="n">filled_map</span><span class="p">{</span><span class="nb">map</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="creating-a-map-callback">
 <h2>Creating a Map Callback<a class="headerlink" href="#creating-a-map-callback" title="Permalink to this headline">¶</a></h2>
 <p>As for any video player, you must specific the callback that the video
@@ -233,23 +241,24 @@ provided for easier use.</p>
 
 <span class="cm">*/</span>
 <span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
-<span class="n">MapDataCallback</span> <span class="n">callback</span> <span class="o">=</span>
-    <span class="n">MapDataCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-      <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setMap</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setItemframeWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setItemframeHeight</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setVideoWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setDitherHolder</span><span class="p">(</span><span class="k">new</span> <span class="n">FilterLiteDither</span><span class="p">())</span>
-      <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
+
+<span class="kd">final</span> <span class="n">MapDataCallback</span> <span class="n">callback</span> <span class="o">=</span>
+  <span class="n">MapDataCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setMap</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setItemframeWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setItemframeHeight</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setVideoWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDitherHolder</span><span class="p">(</span><span class="k">new</span> <span class="n">FilterLiteDither</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Once we are done creating the callback, we can now try and create the actual
 video player!</p>
 </div>
-<div class="section" id="creating-the-map-video-players">
-<h2>Creating the Map Video Players<a class="headerlink" href="#creating-the-map-video-players" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-map-video-player">
+<h2>Creating a Map Video Player<a class="headerlink" href="#creating-a-map-video-player" title="Permalink to this headline">¶</a></h2>
 <p>Now that we created our callback, we can use that to create our video player.
 We will use the
 <a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/map/MapIntegratedPlayer.java">MapIntegratedPlayer</a>
@@ -259,16 +268,16 @@ the callback we defined before, and also the width/height of the video.
 Take a look at this example:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
 
-<span class="n">MapDataCallback</span> <span class="n">callback</span> <span class="o">=</span>
-    <span class="n">MapDataCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
-      <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setMap</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setItemframeWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setItemframeHeight</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setVideoWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-      <span class="p">.</span><span class="na">setDitherHolder</span><span class="p">(</span><span class="k">new</span> <span class="n">FilterLiteDither</span><span class="p">())</span>
-      <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
+<span class="kd">final</span> <span class="n">MapDataCallback</span> <span class="n">callback</span> <span class="o">=</span>
+  <span class="n">MapDataCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setMap</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setItemframeWidth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setItemframeHeight</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setVideoWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDelay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDitherHolder</span><span class="p">(</span><span class="k">new</span> <span class="n">FilterLiteDither</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
 
 <span class="cm">/*</span>
 
@@ -276,8 +285,16 @@ Take a look at this example:</p>
 <span class="cm">C://video.mp4 and has a width of 640 pixels, and height of</span>
 <span class="cm">480 pixels.</span>
 
+<span class="cm">setUrl(&quot;C://video.mp4&quot;) -&gt; Sets the mrl to be the path of the video.</span>
+
+<span class="cm">setCallback(callback) -&gt; Sets the callback for the video player.</span>
+
+<span class="cm">setWidth(640) -&gt; Sets the width to be 640 pixels.</span>
+
+<span class="cm">setHeight(480) -&gt; Sets the height to be 480 pixels.</span>
+
 <span class="cm">*/</span>
-<span class="n">MapIntegratedPlayer</span> <span class="n">player</span> <span class="o">=</span>
+<span class="kd">final</span> <span class="n">MapIntegratedPlayer</span> <span class="n">player</span> <span class="o">=</span>
   <span class="n">MapIntegratedPlayer</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
     <span class="p">.</span><span class="na">setUrl</span><span class="p">(</span><span class="s">&quot;C://video.mp4&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="na">setCallback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
@@ -297,6 +314,7 @@ play, pause, or release.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="entities.html" class="btn btn-neutral float-right" title="Entity Video Players" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="video-player.html" class="btn btn-neutral float-left" title="Introduction to Video Players" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

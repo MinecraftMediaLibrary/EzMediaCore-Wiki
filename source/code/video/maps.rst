@@ -22,12 +22,14 @@ When retreiving a map in normal Minecraft, typically one would type
 the following command:
 
 .. code-block::
+
   /give @p filled_map{map:[id]}
 
 Replace [id] with the specific map id you would like to retreive. For
 example, getting a map with id 0 would be the following:
 
 .. code-block::
+
   /give @p filled_map{map:0}
 
 Creating a Map Callback
@@ -70,22 +72,23 @@ provided for easier use.
 
   */
   final MinecraftMediaLibrary library = ...;
-  MapDataCallback callback =
-      MapDataCallback.builder()
-        .setViewers(null)
-        .setMap(0)
-        .setItemframeWidth(5)
-        .setItemframeHeight(5)
-        .setVideoWidth(640)
-        .setDelay(0)
-        .setDitherHolder(new FilterLiteDither())
-        .build(library);
+
+  final MapDataCallback callback =
+    MapDataCallback.builder()
+      .setViewers(null)
+      .setMap(0)
+      .setItemframeWidth(5)
+      .setItemframeHeight(5)
+      .setVideoWidth(640)
+      .setDelay(0)
+      .setDitherHolder(new FilterLiteDither())
+      .build(library);
 
 Once we are done creating the callback, we can now try and create the actual
 video player!
 
-Creating the Map Video Players
-------------------------------
+Creating a Map Video Player
+---------------------------
 
 Now that we created our callback, we can use that to create our video player.
 We will use the
@@ -99,16 +102,16 @@ Take a look at this example:
 
   final MinecraftMediaLibrary library = ...;
 
-  MapDataCallback callback =
-      MapDataCallback.builder()
-        .setViewers(null)
-        .setMap(0)
-        .setItemframeWidth(5)
-        .setItemframeHeight(5)
-        .setVideoWidth(640)
-        .setDelay(0)
-        .setDitherHolder(new FilterLiteDither())
-        .build(library);
+  final MapDataCallback callback =
+    MapDataCallback.builder()
+      .setViewers(null)
+      .setMap(0)
+      .setItemframeWidth(5)
+      .setItemframeHeight(5)
+      .setVideoWidth(640)
+      .setDelay(0)
+      .setDitherHolder(new FilterLiteDither())
+      .build(library);
 
   /*
 
@@ -116,8 +119,16 @@ Take a look at this example:
   C://video.mp4 and has a width of 640 pixels, and height of
   480 pixels.
 
+  setUrl("C://video.mp4") -> Sets the mrl to be the path of the video.
+
+  setCallback(callback) -> Sets the callback for the video player.
+
+  setWidth(640) -> Sets the width to be 640 pixels.
+
+  setHeight(480) -> Sets the height to be 480 pixels.
+
   */
-  MapIntegratedPlayer player =
+  final MapIntegratedPlayer player =
     MapIntegratedPlayer.builder()
       .setUrl("C://video.mp4")
       .setCallback(callback)

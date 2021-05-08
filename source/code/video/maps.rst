@@ -123,7 +123,7 @@ Take a look at this example:
       .setCallback(callback)
       .setWidth(640)
       .setHeight(480)
-      .build();
+      .build(library);
 
 After that, we are done! Just use the control methods on the video to
 play, pause, or release.

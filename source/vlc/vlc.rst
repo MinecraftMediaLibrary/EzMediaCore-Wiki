@@ -56,7 +56,6 @@ means that Windows, Mac, Linux (and even separate Linux Distributions) have thei
   below.
 
   .. toctree::
-     :maxdepth: 1
 
     binaries/windows-installation
     binaries/mac-installation
@@ -104,8 +103,7 @@ variables and VLC path.
   For more information about how I loaded each of the binaries for the Operating Systems, take a look at the links below.
 
   .. toctree::
-     :maxdepth: 1
-
+  
     load/windows-load
     load/mac-load
     load/linux-load

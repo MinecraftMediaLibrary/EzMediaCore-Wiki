@@ -78,6 +78,7 @@ Links to Sections
 
     history
     map
+    entity
     vlc/vlc
     code/youtube/youtube-extraction
     code/video/video-player

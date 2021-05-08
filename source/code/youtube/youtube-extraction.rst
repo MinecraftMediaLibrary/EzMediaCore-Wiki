@@ -28,7 +28,6 @@ will use when extracting audio.
   For more information about instantiating an ExtractionSetting, take a look at:
 
   .. toctree::
-     :maxdepth: 1
 
     extraction-setting
 

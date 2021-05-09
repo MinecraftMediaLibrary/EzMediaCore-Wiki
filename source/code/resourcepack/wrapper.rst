@@ -29,7 +29,7 @@ that can be empty. Finally, the packFormat is a format used to set the version
 of the pack that should be used (which varies per Minecraft version). Also,
 there is a builder that can be used to assist with this.
 
-.. code:: java
+.. code-block:: java
   /*
 
   setPath("C://resourcepack.zip") -> Sets output path of resourcepack.
@@ -60,7 +60,7 @@ the extraction section) to a ResourcepackWrapper if necessary. Just use the
 `ResourcepackWrapper#of` method. The method also accepts a sound for a prebuilt
 pack if you are lazy.
 
-.. code:: java
+.. code-block:: java
   final ResourcepackWrapper wrapper = ResourcepackWrapper.of(extractor, library);
 
 Building the Resourcepack
@@ -75,5 +75,3 @@ Method Events
 When creating a ResourcepackWrapper, you may override the `onResourcepackBuild()`
 method to be called right before the pack is created. Note however that you cannot
 use the builder and must use the constructor (for anonymous class definition).
-
-  

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; MinecraftMediaLibrary Latest documentation</title>
+  <title>Using HTTP Daemons for Resourcepacks &mdash; MinecraftMediaLibrary Latest documentation</title>
   
 
   
@@ -86,6 +86,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">History of MinecraftMediaLibrary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../entity.html">Entity Nametags in a Nutshell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../video/video-player.html">Introduction to Video Players</a></li>
@@ -137,7 +138,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>Using HTTP Daemons for Resourcepacks</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,7 +157,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="using-http-daemons-for-resourcepacks">
+<h1>Using HTTP Daemons for Resourcepacks<a class="headerlink" href="#using-http-daemons-for-resourcepacks" title="Permalink to this headline">¶</a></h1>
+<p>While resourcepacks allow players to hear custom sounds, you cannot
+simply send them using a file. You must used a direct link to the
+zip file. One solution to solve this is by using an HTTP file server
+to host the pack for users.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about resourcepacks, visit:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../resourcepack.html">Usefulness of Resourcepacks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html#resourcepack-status">Resourcepack Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html#playing-sounds-in-resourcepacks">Playing Sounds in Resourcepacks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>This assumes that you already properly wrapped the resourcepack and
+completed the necessary requirements to build the file.</p>
+<div class="section" id="creating-a-http-daemon">
+<h2>Creating a HTTP Daemon<a class="headerlink" href="#creating-a-http-daemon" title="Permalink to this headline">¶</a></h2>
+<p>Creating a HTTP Daemon is as easy as instantiating the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/681e74d318591283d7059d1f9de631999ab42cea/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/resourcepack/hosting/HttpDaemonProvider.java">HTTPDaemonProvider</a>
+class. The daemon requires only two arguments. A path and a port.</p>
+<p>The path is the place where the root of the HTTP server will be
+located. This is also where users can find and download files
+from the server.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not set this directory to any private files! Only set it to
+an empty, unused folder. MinecraftMediaLibrary automatically
+handles it such that requests cannot access files outside the
+specified root folder, but does not block requests which access
+anything inside the folder!</p>
+</div>
+<p>The port is a specified integer that will be used to host the
+daemon on. This port must be open, properly port-forwarded with
+your router, and available for use.</p>
+<p>The class also provides methods to start the server, generate a
+link to a specific file (inside the HttpDaemonProvider), and
+also retrieving the public IP of the server.</p>
+<p>As for code examples, here is a example piece of code for using
+this class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">This specifies a HTTP server with the root folder set to</span>
+<span class="cm">&quot;C://http&quot;, and a port set to 2020.</span>
+
+<span class="cm">*/</span>
+<span class="kd">final</span> <span class="n">HttpDaemonProvider</span> <span class="n">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpDaemonProvider</span><span class="p">(</span><span class="s">&quot;C://http&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">)</span>
+
+<span class="c1">// Starts the HTTP server</span>
+<span class="n">provider</span><span class="p">.</span><span class="na">startServer</span><span class="p">();</span>
+
+<span class="c1">// Generates a url with the specified path (http:://[PUBLIC_IP]:[PUBLIC_PORT]/resourcepack.zip)</span>
+<span class="kd">final</span> <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="n">provider</span><span class="p">.</span><span class="na">generateUrl</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;C://http/resourcepack.zip&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>And that’s it! Use the generated links to provider users with the
+necessary files they need to download.</p>
+</div>
+</div>
+
 
            </div>
            

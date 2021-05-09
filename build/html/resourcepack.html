@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Search &mdash; MinecraftMediaLibrary Latest documentation</title>
+  <title>Usefulness of Resourcepacks &mdash; MinecraftMediaLibrary Latest documentation</title>
   
 
   
@@ -24,7 +24,6 @@
   
 
   
-    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -34,15 +33,12 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/tabs.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <script type="text/javascript" src="_static/searchtools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -69,7 +65,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -94,7 +90,6 @@
 <li class="toctree-l1"><a class="reference internal" href="vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/video/video-player.html">Introduction to Video Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code/http/http-daemon.html">Using HTTP Daemons for Resourcepacks</a></li>
 </ul>
 
             
@@ -143,10 +138,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Usefulness of Resourcepacks</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/resourcepack.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -158,18 +157,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="usefulness-of-resourcepacks">
+<h1>Usefulness of Resourcepacks<a class="headerlink" href="#usefulness-of-resourcepacks" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/resourcepack.jpg" src="_images/resourcepack.jpg" />
+<p>Resourcepacks on a server main seem hard to find a use for, however, when
+playing videos, it has a very good benefit. It allows user to hear audio
+while the media is playing. Unfortunately, Minecraft doesn’t allow any
+sound to be played for the user and it must be stored in a resourcepack
+in order to play it.</p>
+<div class="section" id="resourcepack-status">
+<h2>Resourcepack Status<a class="headerlink" href="#resourcepack-status" title="Permalink to this headline">¶</a></h2>
+<p>In general, players have the option to accept or decline a resourcepack.
+If the resourcepack is accepted, the textures, sounds, and other
+customized objects will be downloaded to the client. However, if it is
+declined, they will not be downloaded. This means that in order for a
+user to hear sound, they must accept the resourcepack.</p>
+</div>
+<div class="section" id="playing-sounds-in-resourcepacks">
+<h2>Playing Sounds in Resourcepacks<a class="headerlink" href="#playing-sounds-in-resourcepacks" title="Permalink to this headline">¶</a></h2>
+<p>Suppose the user accepted the resourcepack. How would we no play the
+sound for the user? Well typically in-game players would have to use the</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">playsound</span>
+</pre></div>
+</div>
+<p>command and specify which players to target to, the name of the sound, and
+whatever setting they want to use for the sound. We use a similar technique
+but in code in MinecraftMediaLibrary.</p>
+<p>Throughout the library, we would name the sound under the plugin name in full
+lowercase with a sound named “audio”. This sound will be linked to an ogg which
+has the audio for a specific media. That way, it can be played for users easily.</p>
+<p>This is how sound is played for users in the library. It utilizes the advantage
+of resourcepacks.</p>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
@@ -211,14 +232,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

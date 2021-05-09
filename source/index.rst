@@ -84,6 +84,7 @@ Links to Sections
     vlc/vlc
     code/youtube/youtube-extraction
     code/video/video-player
+    code/http/http-daemon
 
 Indices and Tables
 ------------------

@@ -18,7 +18,7 @@ Creating an Entity Callback
 ---------------------------
 
 Creating an entity callback requires usage of the
-`EntityCloudCallback <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudCallback.java>`__
+`EntityCallback <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCallback.java>`__
 class. Creating the class requires multiple arguments. These arguments
 include an instance of the library, the viewers, the entity width/height,
 the delay between frames, the location at which you want to spawn the
@@ -73,7 +73,7 @@ Creating an Entity Video Player
 
 After creating our callback, we can use that for our video
 interface. To do this, we will use the
-`EntityCloudIntegratedPlayer <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudIntegratedPlayer.java>`__
+`EntityIntegratedPlayer <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityIntegratedPlayer.java>`__
 class. Instantiating one requires an instance of the library, the mrl (either can be
 a Youtube url or a file), a callback, a location, and a width/height. For a code
 example, we will use the builder:
@@ -83,8 +83,8 @@ example, we will use the builder:
   final MinecraftMediaLibrary library = ...;
   final Player player = ...;
 
-  final EntityCloudCallback callback =
-    EntityCloudCallback.builder()
+  final EntityCallback callback =
+    EntityCallback.builder()
       .setViewers(null)
       .setEntityWidth(640)
       .setEntityHeight(480)
@@ -107,8 +107,8 @@ example, we will use the builder:
   setHeight(480) -> Sets the height to be 480 pixels.
 
   */
-  final EntityCloudIntegratedPlayer player =
-    EntityCloudIntegratedPlayer.builder()
+  final EntityIntegratedPlayer player =
+    EntityIntegratedPlayer.builder()
           .setUrl("C://video.mp4")
           .setCallback(callback)
           .setWidth(640)

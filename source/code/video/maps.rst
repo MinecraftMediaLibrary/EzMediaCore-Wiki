@@ -1,6 +1,8 @@
 Map Video Players
 =================
 
+.. image:: ../../resources/images/maps.gif
+
 Map Video Players, as the name stands, are videos that are played
 on maps. Maps are displayable on itemframes, meaning that players
 are able to place itemframes on certain blocks, set the maps onto

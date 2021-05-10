@@ -13,7 +13,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,7 +37,9 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using a Resourcepack Wrapper" href="../resourcepack/wrapper.html" />
+    <link rel="prev" title="Entity Video Players" href="../video/entities.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,13 +84,18 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">History of MinecraftMediaLibrary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../entity.html">Entity Nametags in a Nutshell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../video/video-player.html">Introduction to Video Players</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using HTTP Daemons for Resourcepacks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html">Using a Resourcepack Wrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-http-daemon">Creating a HTTP Daemon</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -165,12 +171,18 @@ zip file. One solution to solve this is by using an HTTP file server
 to host the pack for users.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about resourcepacks, visit:</p>
+<p>For more information about resourcepack wrappers, visit:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../resourcepack.html">Usefulness of Resourcepacks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html#resourcepack-status">Resourcepack Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html#playing-sounds-in-resourcepacks">Playing Sounds in Resourcepacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resourcepack/wrapper.html">Using a Resourcepack Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html">Usefulness of Resourcepacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../resourcepack.html#resourcepack-status">Resourcepack Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../resourcepack.html#playing-sounds-in-resourcepacks">Playing Sounds in Resourcepacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html#creating-a-resourcepack-wrapper">Creating a Resourcepack Wrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html#building-the-resourcepack">Building the Resourcepack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html#method-events">Method Events</a></li>
 </ul>
 </li>
 </ul>
@@ -227,6 +239,10 @@ necessary files they need to download.</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../resourcepack/wrapper.html" class="btn btn-neutral float-right" title="Using a Resourcepack Wrapper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../video/entities.html" class="btn btn-neutral float-left" title="Entity Video Players" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

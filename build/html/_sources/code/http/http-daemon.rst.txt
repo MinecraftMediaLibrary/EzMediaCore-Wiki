@@ -7,11 +7,11 @@ zip file. One solution to solve this is by using an HTTP file server
 to host the pack for users.
 
 .. note::
-  For more information about resourcepacks, visit:
+  For more information about resourcepack wrappers, visit:
 
   .. toctree::
 
-      ../../../resourcepack
+      ../resourcepack/wrapper
 
 This assumes that you already properly wrapped the resourcepack and
 completed the necessary requirements to build the file.

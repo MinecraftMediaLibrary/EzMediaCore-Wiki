@@ -7,13 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; MinecraftMediaLibrary Latest documentation</title>
+  <title>Using a Resourcepack Wrapper &mdash; MinecraftMediaLibrary Latest documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
 
   
   
@@ -38,7 +37,9 @@
 
     
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Usefulness of Resourcepacks" href="../../resourcepack.html" />
+    <link rel="prev" title="Using HTTP Daemons for Resourcepacks" href="../http/http-daemon.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,13 +84,24 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../history.html">History of MinecraftMediaLibrary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../map.html">Minecraft Maps in a Nutshell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../entity.html">Entity Nametags in a Nutshell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vlc/vlc.html">MinecraftMediaLibrary General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../video/video-player.html">Introduction to Video Players</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../http/http-daemon.html">Using HTTP Daemons for Resourcepacks</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using a Resourcepack Wrapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../resourcepack.html">Usefulness of Resourcepacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-resourcepack-wrapper">Creating a Resourcepack Wrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-resourcepack">Building the Resourcepack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#method-events">Method Events</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-daemon.html#creating-a-http-daemon">Creating a HTTP Daemon</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -138,7 +150,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+          <li><a href="../http/http-daemon.html">Using HTTP Daemons for Resourcepacks</a> &raquo;</li>
+        
+      <li>Using a Resourcepack Wrapper</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,12 +171,93 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="using-a-resourcepack-wrapper">
+<h1>Using a Resourcepack Wrapper<a class="headerlink" href="#using-a-resourcepack-wrapper" title="Permalink to this headline">¶</a></h1>
+<p>Wrapping a resourcepack is not easy as you need to make sure
+to place all the files in the correct areas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about resourcepacks, visit:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../resourcepack.html">Usefulness of Resourcepacks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html#resourcepack-status">Resourcepack Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html#playing-sounds-in-resourcepacks">Playing Sounds in Resourcepacks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>The resourcepack wrapper in MinecraftMediaLibrary’s case uses
+sound to be wrapped.</p>
+<div class="section" id="creating-a-resourcepack-wrapper">
+<h2>Creating a Resourcepack Wrapper<a class="headerlink" href="#creating-a-resourcepack-wrapper" title="Permalink to this headline">¶</a></h2>
+<p>To create a resourcepack wrapper, we will be using the
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/resourcepack/ResourcepackWrapper.java">ResourcepackWrapper</a>
+class. It requires an instance of the library, a path to which the
+resourcepack should be built, a path to the audio, a path to the icon
+(set to null if you don’t want one), a description, and a packFormat.</p>
+<p>The audio should be a path to an ogg file. The icon file should lead to
+a png file named “pack.png”. The description should be a non-null description
+that can be empty. Finally, the packFormat is a format used to set the version
+of the pack that should be used (which varies per Minecraft version). Also,
+there is a builder that can be used to assist with this.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">setPath(&quot;C://resourcepack.zip&quot;) -&gt; Sets output path of resourcepack.</span>
+
+<span class="cm">setDescription(&quot;Example Resourcepack&quot;) -&gt; Sets description of resourcepack.</span>
+
+<span class="cm">setAudio(&quot;C://audio.ogg&quot;) -&gt; Sets audio to the ogg file.</span>
+
+<span class="cm">setIcon(&quot;C://pack.png&quot;) -&gt; Sets icon to the png file.</span>
+
+<span class="cm">setPackFormat(6) -&gt; Sets the pack-format to 6 (1.16).</span>
+
+<span class="cm">*/</span>
+
+<span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="kd">final</span> <span class="n">ResourcepackWrapper</span> <span class="n">wrapper</span> <span class="o">=</span>
+  <span class="n">ResourcepackWrapper</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">setPath</span><span class="p">(</span><span class="s">&quot;C://resourcepack.zip&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setDescription</span><span class="p">(</span><span class="s">&quot;Example Resourcepack&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setAudio</span><span class="p">(</span><span class="s">&quot;C://audio.ogg&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setIcon</span><span class="p">(</span><span class="s">&quot;C://pack.png&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">setPackFormat</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">build</span><span class="p">(</span><span class="n">library</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>MinecraftMediaLibrary allows you to also convert a YoutubeExtraction (explained in
+the extraction section) to a ResourcepackWrapper if necessary. Just use the
+<cite>ResourcepackWrapper#of</cite> method. The method also accepts a sound for a prebuilt
+pack if you are lazy.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">ResourcepackWrapper</span> <span class="n">wrapper</span> <span class="o">=</span> <span class="n">ResourcepackWrapper</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">extractor</span><span class="p">,</span> <span class="n">library</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-the-resourcepack">
+<h2>Building the Resourcepack<a class="headerlink" href="#building-the-resourcepack" title="Permalink to this headline">¶</a></h2>
+<p>After creating the ResourcepackWrapper, call the <cite>buildResourcePack()</cite> method to
+build the resourcepack at the target folder.</p>
+</div>
+<div class="section" id="method-events">
+<h2>Method Events<a class="headerlink" href="#method-events" title="Permalink to this headline">¶</a></h2>
+<p>When creating a ResourcepackWrapper, you may override the <cite>onResourcepackBuild()</cite>
+method to be called right before the pack is created. Note however that you cannot
+use the builder and must use the constructor (for anonymous class definition).</p>
+</div>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../resourcepack.html" class="btn btn-neutral float-right" title="Usefulness of Resourcepacks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../http/http-daemon.html" class="btn btn-neutral float-left" title="Using HTTP Daemons for Resourcepacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

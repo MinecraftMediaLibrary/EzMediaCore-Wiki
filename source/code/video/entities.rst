@@ -1,6 +1,8 @@
 Entity Video Players
 ====================
 
+.. image:: ../../resources/images/entities.gif
+
 Entity video players are video players which take advantage of entity
 name tags to display video frames. It acts as a solid way to play media
 while having the less likely-hood of timing out players.

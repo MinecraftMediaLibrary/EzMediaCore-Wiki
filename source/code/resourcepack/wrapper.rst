@@ -30,6 +30,7 @@ of the pack that should be used (which varies per Minecraft version). Also,
 there is a builder that can be used to assist with this.
 
 .. code-block:: java
+
   /*
 
   setPath("C://resourcepack.zip") -> Sets output path of resourcepack.
@@ -61,6 +62,7 @@ the extraction section) to a ResourcepackWrapper if necessary. Just use the
 pack if you are lazy.
 
 .. code-block:: java
+
   final ResourcepackWrapper wrapper = ResourcepackWrapper.of(extractor, library);
 
 Building the Resourcepack

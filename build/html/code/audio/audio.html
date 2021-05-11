@@ -7,12 +7,13 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; MinecraftMediaLibrary Latest documentation</title>
+  <title>Creating an Audio Player &mdash; MinecraftMediaLibrary Latest documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
 
   
   
@@ -138,7 +139,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>Creating an Audio Player</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,7 +158,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="creating-an-audio-player">
+<h1>Creating an Audio Player<a class="headerlink" href="#creating-an-audio-player" title="Permalink to this headline">¶</a></h1>
+<p>Creating an audio player is relatively easy using the MinecraftMediaLibrary
+api. You may extract the audio from a Youtube link or use an .ogg file for
+doing this. Create a
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/resourcepack/ResourcepackWrapper.java">Resourcepack Wrapper</a>
+off of this, and host it using either by manually doing it or by an HTTP
+server (which the library supports).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about Resourcepack Wrappers, visit</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resourcepack/wrapper.html">Using a Resourcepack Wrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../resourcepack.html">Usefulness of Resourcepacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../resourcepack.html#resourcepack-status">Resourcepack Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../resourcepack.html#playing-sounds-in-resourcepacks">Playing Sounds in Resourcepacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html#creating-a-resourcepack-wrapper">Creating a Resourcepack Wrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html#building-the-resourcepack">Building the Resourcepack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resourcepack/wrapper.html#method-events">Method Events</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>When using a Youtube link, define a new
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/extractor/YoutubeExtraction.java">YoutubeExtraction</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about Youtube Extractors, visit</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../youtube/youtube-extraction.html#method-events">Method Events</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>The hyperlinks will show you how to create the resourcepack.</p>
+<div class="section" id="playing-the-actual-audio">
+<h2>Playing the Actual Audio<a class="headerlink" href="#playing-the-actual-audio" title="Permalink to this headline">¶</a></h2>
+<p>To play the actual audio, you would have to call the sound name that
+is your plugin name to full lowercase. Getting the plugin name is
+equivalent to Plugin#getName.</p>
+<p>As for doing this in Spigot specifically, just use the playSound
+method part of the Player class or World class to play the specific
+sound so entities can hear it.</p>
+<p>Example for playing the sound in a World:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">Plugin</span> <span class="n">plugin</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="kd">final</span> <span class="n">World</span> <span class="n">world</span> <span class="o">=</span> <span class="n">Bukkit</span><span class="p">.</span><span class="na">getWorld</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="n">world</span><span class="p">.</span><span class="na">playSound</span><span class="p">(</span><span class="k">new</span> <span class="n">Location</span><span class="p">(</span><span class="n">world</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">plugin</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">(),</span> <span class="mf">1.0F</span><span class="p">,</span> <span class="mf">1.0F</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Example for playing the sound for a specific Player:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">Plugin</span> <span class="n">plugin</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="kd">final</span> <span class="n">World</span> <span class="n">world</span> <span class="o">=</span> <span class="n">Bukkit</span><span class="p">.</span><span class="na">getWorld</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="n">Bukkit</span><span class="p">.</span><span class="na">getPlayer</span><span class="p">(</span><span class="s">&quot;PulseBeat_02&quot;</span><span class="p">);</span>
+<span class="n">player</span><span class="p">.</span><span class="na">playSound</span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="na">getLocation</span><span class="p">(),</span> <span class="n">plugin</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">(),</span> <span class="mf">1.0F</span><span class="p">,</span> <span class="mf">1.0F</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
 
            </div>
            

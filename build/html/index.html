@@ -13,10 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
 
   
   
@@ -36,8 +33,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
-        <script src="_static/sphinx_tabs/tabs.js"></script>
+        <script src="_static/tabs.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -97,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="code/youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/video/video-player.html">Introduction to Video Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/http/http-daemon.html">Using HTTP Daemons for Resourcepacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code/audio/audio.html">Creating an Audio Player</a></li>
 </ul>
 
             
@@ -175,89 +172,43 @@ needs.</p>
 <h2>Importing MinecraftMediaLibrary Into a Project<a class="headerlink" href="#importing-minecraftmedialibrary-into-a-project" title="Permalink to this headline">¶</a></h2>
 <p>First, add <a class="reference external" href="https://jitpack.io/">Jitpack</a> because the repository is hosted there.</p>
 <div class="sphinx-tabs docutils container">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-TWF2ZW4= docutils container">
-<div class="docutils container">
-<p>Maven</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="docutils container">
-<p>Gradle (Groovy)</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="docutils container">
-<p>Gradle (Kotlin)</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWF2ZW4= active docutils container">
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;repository&gt;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-TWF2ZW4=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-TWF2ZW4=" name="TWF2ZW4=" role="tab" tabindex="0">Maven</button><button aria-controls="panel-0-R3JhZGxlIChHcm9vdnkp" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tab" tabindex="-1">Gradle (Groovy)</button><button aria-controls="panel-0-R3JhZGxlIChLb3RsaW4p" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tab" tabindex="-1">Gradle (Kotlin)</button></div><div aria-labelledby="tab-0-TWF2ZW4=" class="sphinx-tabs-panel group-tab" id="panel-0-TWF2ZW4=" name="TWF2ZW4=" role="tabpanel" tabindex="0"><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;repository&gt;</span>
    <span class="nt">&lt;id&gt;</span>jitpack.io<span class="nt">&lt;/id&gt;</span>
    <span class="nt">&lt;url&gt;</span>https://jitpack.io<span class="nt">&lt;/url&gt;</span>
 <span class="nt">&lt;/repository&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
+</div><div aria-labelledby="tab-0-R3JhZGxlIChHcm9vdnkp" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tabpanel" tabindex="0"><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="o">{</span>
    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://jitpack.io&#39;</span> <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
+</div><div aria-labelledby="tab-0-R3JhZGxlIChLb3RsaW4p" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tabpanel" tabindex="0"><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
    <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="p">(</span><span class="s">&quot;https://jitpack.io&quot;</span><span class="p">)</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <p>Then, add the actual library repo itself.</p>
 <div class="sphinx-tabs docutils container">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-TWF2ZW4= docutils container">
-<div class="docutils container">
-<p>Maven</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="docutils container">
-<p>Gradle (Groovy)</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="docutils container">
-<p>Gradle (Kotlin)</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWF2ZW4= active docutils container">
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-TWF2ZW4=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-TWF2ZW4=" name="TWF2ZW4=" role="tab" tabindex="0">Maven</button><button aria-controls="panel-1-R3JhZGxlIChHcm9vdnkp" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tab" tabindex="-1">Gradle (Groovy)</button><button aria-controls="panel-1-R3JhZGxlIChLb3RsaW4p" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tab" tabindex="-1">Gradle (Kotlin)</button></div><div aria-labelledby="tab-1-TWF2ZW4=" class="sphinx-tabs-panel group-tab" id="panel-1-TWF2ZW4=" name="TWF2ZW4=" role="tabpanel" tabindex="0"><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
    <span class="nt">&lt;groupId&gt;</span>com.github.minecraftmedialibrary<span class="nt">&lt;/groupId&gt;</span>
    <span class="nt">&lt;artifactId&gt;</span>minecraftmedialibrary<span class="nt">&lt;/artifactId&gt;</span>
    <span class="nt">&lt;version&gt;</span>master-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChHcm9vdnkp docutils container">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="o">{</span>
+</div><div aria-labelledby="tab-1-R3JhZGxlIChHcm9vdnkp" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-R3JhZGxlIChHcm9vdnkp" name="R3JhZGxlIChHcm9vdnkp" role="tabpanel" tabindex="0"><div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="o">{</span>
    <span class="n">implementation</span> <span class="s1">&#39;com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT&#39;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-R3JhZGxlIChLb3RsaW4p docutils container">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="p">{</span>
+</div><div aria-labelledby="tab-1-R3JhZGxlIChLb3RsaW4p" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-R3JhZGxlIChLb3RsaW4p" name="R3JhZGxlIChLb3RsaW4p" role="tabpanel" tabindex="0"><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="p">{</span>
    <span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="section" id="links-to-sections">
 <h2>Links to Sections<a class="headerlink" href="#links-to-sections" title="Permalink to this headline">¶</a></h2>
@@ -340,6 +291,29 @@ needs.</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="code/http/http-daemon.html#creating-a-http-daemon">Creating a HTTP Daemon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code/audio/audio.html">Creating an Audio Player</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code/resourcepack/wrapper.html">Using a Resourcepack Wrapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resourcepack.html">Usefulness of Resourcepacks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resourcepack.html#resourcepack-status">Resourcepack Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resourcepack.html#playing-sounds-in-resourcepacks">Playing Sounds in Resourcepacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="code/resourcepack/wrapper.html#creating-a-resourcepack-wrapper">Creating a Resourcepack Wrapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code/resourcepack/wrapper.html#building-the-resourcepack">Building the Resourcepack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code/resourcepack/wrapper.html#method-events">Method Events</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code/youtube/youtube-extraction.html">Retrieving Video/Audio from Youtube Videos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="code/youtube/extraction-setting.html">Instantiating an Extraction Setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-video">Extracting Video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code/youtube/youtube-extraction.html#extracting-audio">Extracting Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code/youtube/youtube-extraction.html#important-warning">Important Warning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code/youtube/youtube-extraction.html#method-events">Method Events</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="code/audio/audio.html#playing-the-actual-audio">Playing the Actual Audio</a></li>
 </ul>
 </li>
 </ul>

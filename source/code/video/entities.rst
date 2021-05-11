@@ -55,7 +55,7 @@ example, take a look here when we use the builder:
 
   */
   final MinecraftMediaLibrary library = ...;
-  final Player player = ...;
+  final Player player = Bukkit.getPlayer("PulseBeat_02");
 
   final EntityCloudCallback callback =
     EntityCloudCallback.builder()
@@ -83,7 +83,7 @@ example, we will use the builder:
 .. code-block:: java
 
   final MinecraftMediaLibrary library = ...;
-  final Player player = ...;
+  final Player player = Bukkit.getPlayer("PulseBeat_02");
 
   final EntityCallback callback =
     EntityCallback.builder()

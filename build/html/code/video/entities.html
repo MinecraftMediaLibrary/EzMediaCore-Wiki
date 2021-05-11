@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
 
   
   
@@ -191,7 +192,7 @@ However, MinecraftMediaLibrary has all the mob spawns handled for you.</p>
 <div class="section" id="creating-an-entity-callback">
 <h2>Creating an Entity Callback<a class="headerlink" href="#creating-an-entity-callback" title="Permalink to this headline">¶</a></h2>
 <p>Creating an entity callback requires usage of the
-<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudCallback.java">EntityCloudCallback</a>
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCallback.java">EntityCallback</a>
 class. Creating the class requires multiple arguments. These arguments
 include an instance of the library, the viewers, the entity width/height,
 the delay between frames, the location at which you want to spawn the
@@ -222,7 +223,7 @@ example, take a look here when we use the builder:</p>
 
 <span class="cm">*/</span>
 <span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
-<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="n">Bukkit</span><span class="p">.</span><span class="na">getPlayer</span><span class="p">(</span><span class="s">&quot;PulseBeat_02&quot;</span><span class="p">);</span>
 
 <span class="kd">final</span> <span class="n">EntityCloudCallback</span> <span class="n">callback</span> <span class="o">=</span>
   <span class="n">EntityCloudCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
@@ -242,15 +243,15 @@ video player for entities.</p>
 <h2>Creating an Entity Video Player<a class="headerlink" href="#creating-an-entity-video-player" title="Permalink to this headline">¶</a></h2>
 <p>After creating our callback, we can use that for our video
 interface. To do this, we will use the
-<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudIntegratedPlayer.java">EntityCloudIntegratedPlayer</a>
+<a class="reference external" href="https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityIntegratedPlayer.java">EntityIntegratedPlayer</a>
 class. Instantiating one requires an instance of the library, the mrl (either can be
 a Youtube url or a file), a callback, a location, and a width/height. For a code
 example, we will use the builder:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="n">MinecraftMediaLibrary</span> <span class="n">library</span> <span class="o">=</span> <span class="p">...;</span>
-<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="kd">final</span> <span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="n">Bukkit</span><span class="p">.</span><span class="na">getPlayer</span><span class="p">(</span><span class="s">&quot;PulseBeat_02&quot;</span><span class="p">);</span>
 
-<span class="kd">final</span> <span class="n">EntityCloudCallback</span> <span class="n">callback</span> <span class="o">=</span>
-  <span class="n">EntityCloudCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+<span class="kd">final</span> <span class="n">EntityCallback</span> <span class="n">callback</span> <span class="o">=</span>
+  <span class="n">EntityCallback</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
     <span class="p">.</span><span class="na">setViewers</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
     <span class="p">.</span><span class="na">setEntityWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>
     <span class="p">.</span><span class="na">setEntityHeight</span><span class="p">(</span><span class="mi">480</span><span class="p">)</span>
@@ -273,8 +274,8 @@ example, we will use the builder:</p>
 <span class="cm">setHeight(480) -&gt; Sets the height to be 480 pixels.</span>
 
 <span class="cm">*/</span>
-<span class="kd">final</span> <span class="n">EntityCloudIntegratedPlayer</span> <span class="n">player</span> <span class="o">=</span>
-  <span class="n">EntityCloudIntegratedPlayer</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+<span class="kd">final</span> <span class="n">EntityIntegratedPlayer</span> <span class="n">player</span> <span class="o">=</span>
+  <span class="n">EntityIntegratedPlayer</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
         <span class="p">.</span><span class="na">setUrl</span><span class="p">(</span><span class="s">&quot;C://video.mp4&quot;</span><span class="p">)</span>
         <span class="p">.</span><span class="na">setCallback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
         <span class="p">.</span><span class="na">setWidth</span><span class="p">(</span><span class="mi">640</span><span class="p">)</span>

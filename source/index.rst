@@ -60,7 +60,7 @@ Then, add the actual library repo itself.
      .. code:: groovy
 
         dependencies {
-           implementation 'com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT'
+           implementation 'com.github.minecraftmedialibrary:minecraftmedialibrary:master-SNAPSHOT'
         }
 
   .. group-tab:: Gradle (Kotlin)
@@ -68,7 +68,7 @@ Then, add the actual library repo itself.
      .. code:: kotlin
 
         dependencies {
-           implementation("com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT")
+           implementation("com.github.minecraftmedialibrary:minecraftmedialibrary:master-SNAPSHOT")
         }
 
 

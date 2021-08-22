@@ -32,8 +32,6 @@ My last resort was to download the binaries off from VLC and compile them using 
 the gcc command to be installed which leads to many other problems too (not all distributions have it pre-installed, and I doubt
 a server like BisectHosting would have that installed).
 
-Currently, I am stuck. I have no idea of any solutions to possibly solve this. I went as far as using Conda for a possible
-solution but they just led to more and more problems. If you have a suggestion, feel free to tell me. This also means that
-support for Linux is not available at the moment. If you want to see my thoughts on how I tried to pull out some algorithm,
-take a look
-`here <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/2c80ff5441e2108fba6e365dd0709ac95a122713/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/vlc/os/linux/pkg/PackageBase.java#L36>`__
+Currently, I am still deciding which choice to use. Both ways are not perfect, and while they are certainly not impossible, they
+will be extremely time consuming and contain a lot of bugs. I am currently working on perhaps the compiling option, however,
+I am far from giving support for Linux. Feel free to help me out as I will really need it.

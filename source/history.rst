@@ -1,4 +1,4 @@
-History of MinecraftMediaLibrary
+History of EzMediaCore
 ================================
 
 In the way beginning, I was first interested in playing audio (specifically sounds)

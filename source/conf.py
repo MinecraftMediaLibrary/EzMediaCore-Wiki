@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'MinecraftMediaLibrary'
+project = 'EzMediaCore'
 copyright = '2021, PulseBeat_02'
 author = 'PulseBeat_02'
 

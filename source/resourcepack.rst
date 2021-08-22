@@ -30,7 +30,7 @@ sound for the user? Well typically in-game players would have to use the
 
 command and specify which players to target to, the name of the sound, and
 whatever setting they want to use for the sound. We use a similar technique
-but in code in MinecraftMediaLibrary.
+but in code in EzMediaCore.
 
 Throughout the library, we would name the sound under the plugin name in full
 lowercase with a sound named "audio". This sound will be linked to an ogg which

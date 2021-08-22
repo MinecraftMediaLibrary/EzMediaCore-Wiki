@@ -37,7 +37,7 @@ Creating a Map Callback
 
 As for any video player, you must specific the callback that the video
 player will use. To do this, we will use the
-`MapDataCallback <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/map/MapDataCallback.java>`__
+`MapDataCallback <https://github.com/MinecraftMediaLibrary/EzMediaCore/blob/master/EzMediaCore-api/src/main/java/com/github/pulsebeat02/EzMediaCore/frame/map/MapDataCallback.java>`__
 class. To initialize the class, it requires an instance of our library,
 the viewers, the itemframe width/height, the video width (in pixels),
 the first map to use, and the delay between frames. A builder is
@@ -71,7 +71,7 @@ provided for easier use.
   dithering documentation.
 
   */
-  final MinecraftMediaLibrary library = ...;
+  final EzMediaCore library = ...;
 
   final MapDataCallback callback =
     MapDataCallback.builder()
@@ -92,7 +92,7 @@ Creating a Map Video Player
 
 Now that we created our callback, we can use that to create our video player.
 We will use the
-`MapIntegratedPlayer <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/map/MapIntegratedPlayer.java>`__
+`MapIntegratedPlayer <https://github.com/MinecraftMediaLibrary/EzMediaCore/blob/master/EzMediaCore-api/src/main/java/com/github/pulsebeat02/EzMediaCore/frame/map/MapIntegratedPlayer.java>`__
 for this. To instantiate this class, we will just pass in a
 library instance, a url to the media (can be Youtube or a File),
 the callback we defined before, and also the width/height of the video.
@@ -100,7 +100,7 @@ Take a look at this example:
 
 .. code-block:: java
 
-  final MinecraftMediaLibrary library = ...;
+  final EzMediaCore library = ...;
 
   final MapDataCallback callback =
     MapDataCallback.builder()

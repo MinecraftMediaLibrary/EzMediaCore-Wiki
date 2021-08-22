@@ -1,4 +1,4 @@
-MinecraftMediaLibrary General Information
+EzMediaCore General Information
 =========================================
 
 This section is intended for developers and **strongly** recommended for readers to take
@@ -23,7 +23,7 @@ flexible, and a very much valid option to choose.
   our application, which allows easier processing and faster video data retrieval (due
   to how it is written in C/C++/Lua).
 
-Implementing VLC Into MinecraftMediaLibrary
+Implementing VLC Into EzMediaCore
 -------------------------------------------
 
 Obviously, VLC Media Player is not written in Java, but mainly composed in C, C++, and
@@ -39,7 +39,7 @@ which provides bindings and a functional API to provide callbacks into Java code
    to create fatal crashes. This means multiple concurrent threads (or video players) accessing
    such native libraries will likely be unsafe.
 
-Due to such restrictions, MinecraftMediaLibrary as in the current patch does not support multiple
+Due to such restrictions, EzMediaCore as in the current patch does not support multiple
 video playback at once. It is unsafe and not ready for production. However, in the near future,
 perhaps VLCJ - Pro could be an option.
 
@@ -80,7 +80,7 @@ the possible directories. The class which uses ServiceLoader can be found
 According to StackOverflow, ServiceLoader will only find certain classes loaded by the current classloader thread. After
 a load of debugging, I've finally found that due to how the Minecraft server is running on a different classloader thread
 from the actual library, it can find the proper paths. Thus, I had to implement my own mini-NativeDiscovery implementation
-to try and load VLC. This discovery method is known as **MinecraftMediaLibrary NativeDiscovery**, or **MMLNativeDiscovery**
+to try and load VLC. This discovery method is known as **EzMediaCore NativeDiscovery**, or **MMLNativeDiscovery**
 in short.
 
 MMLNativeDiscovery
@@ -89,7 +89,7 @@ MMLNativeDiscovery
 I created separate abstractions for each module. In order to load VLC binaries, I created a method which takes in
 a directory and attempts to load VLC from that directory. It uses recursion to locate the plugins folder and the folder
 containing core libraries of VLC (such as libvlc, libvlccore, etc). The strategy/algorithm can be found
-`here <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/2c80ff5441e2108fba6e365dd0709ac95a122713/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/vlc/os/MMLNativeDiscovery.java#L69>`__.
+`here <https://github.com/MinecraftMediaLibrary/EzMediaCore/blob/2c80ff5441e2108fba6e365dd0709ac95a122713/EzMediaCore-api/src/main/java/com/github/pulsebeat02/EzMediaCore/vlc/os/MMLNativeDiscovery.java#L69>`__.
 
 It first tries to identify if NativeDiscovery works on the system or not (which we know doesn't work, but maybe it will work
 some day!). Then, I used a heuristic algorithm to improve the search. I added keywords that sort the PriorityQueue such that

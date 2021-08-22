@@ -1,14 +1,18 @@
-MinecraftMediaLibrary
+EzMediaCore
 =====================
 
-.. image:: resources/images/minecraftmedialibrary.png
-
-**MinecraftMediaLibrary** is a library used to display media to players
+**EzMediaCore** is a library used to display media to players
 such as pictures, audio, videos, and other forms of media. It uses
 a variety of displays that are customizable depending on the user's
 needs.
 
-Importing MinecraftMediaLibrary Into a Project
+Prerequisites
+-------------
+
+- Java 16
+- Minecraft 1.16.5 or 1.17
+
+Importing EzMediaCore Into a Project
 ----------------------------------------------
 
 First, add `Jitpack <https://jitpack.io/>`__ because the repository is hosted there.
@@ -29,8 +33,9 @@ First, add `Jitpack <https://jitpack.io/>`__ because the repository is hosted th
       .. code:: groovy
 
          repositories {
-            maven { url 'https://jitpack.io' }
+           maven { url 'https://jitpack.io' }
          }
+
 
    .. group-tab:: Gradle (Kotlin)
 
@@ -50,8 +55,8 @@ Then, add the actual library repo itself.
      .. code:: xml
 
         <dependency>
-           <groupId>com.github.minecraftmedialibrary</groupId>
-           <artifactId>minecraftmedialibrary</artifactId>
+           <groupId>com.github.MinecraftMediaLibrary</groupId>
+           <artifactId>EzMediaCore</artifactId>
            <version>master-SNAPSHOT</version>
         </dependency>
 
@@ -60,7 +65,7 @@ Then, add the actual library repo itself.
      .. code:: groovy
 
         dependencies {
-           implementation 'com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT'
+           implementation 'com.github.MinecraftMediaLibrary:EzMediaCore:master-SNAPSHOT'
         }
 
   .. group-tab:: Gradle (Kotlin)
@@ -68,12 +73,12 @@ Then, add the actual library repo itself.
      .. code:: kotlin
 
         dependencies {
-           implementation("com.github.minecraftmedialibrary:minecraftmedialibrary:-SNAPSHOT")
+           implementation("com.github.MinecraftMediaLibrary:EzMediaCore:master-SNAPSHOT")
         }
 
 
 
-Links to Sections
+General Sections
 -----------------
 
 .. toctree::

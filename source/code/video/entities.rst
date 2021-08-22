@@ -12,19 +12,19 @@ For more information about entities, visit the following:
     ../../../entity
 
 As for summoning mobs. An in game command would be the /summon option.
-However, MinecraftMediaLibrary has all the mob spawns handled for you.
+However, EzMediaCore has all the mob spawns handled for you.
 
 Creating an Entity Callback
 ---------------------------
 
 Creating an entity callback requires usage of the
-`EntityCloudCallback <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudCallback.java>`__
+`EntityCloudCallback <https://github.com/MinecraftMediaLibrary/EzMediaCore/blob/master/EzMediaCore-api/src/main/java/com/github/pulsebeat02/EzMediaCore/frame/entity/EntityCloudCallback.java>`__
 class. Creating the class requires multiple arguments. These arguments
 include an instance of the library, the viewers, the entity width/height,
 the delay between frames, the location at which you want to spawn the
 entity, and also what type of entity you want to use.
 
-Currently, MinecraftMediaLibrary only supports ArmorStands and
+Currently, EzMediaCore only supports ArmorStands and
 AreaEffectClouds, however, updates may change this fact. For a code
 example, take a look here when we use the builder:
 
@@ -52,7 +52,7 @@ example, take a look here when we use the builder:
   options.
 
   */
-  final MinecraftMediaLibrary library = ...;
+  final EzMediaCore library = ...;
   final Player player = ...;
 
   final EntityCloudCallback callback =
@@ -73,14 +73,14 @@ Creating an Entity Video Player
 
 After creating our callback, we can use that for our video
 interface. To do this, we will use the
-`EntityCloudIntegratedPlayer <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/blob/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/entity/EntityCloudIntegratedPlayer.java>`__
+`EntityCloudIntegratedPlayer <https://github.com/MinecraftMediaLibrary/EzMediaCore/blob/master/EzMediaCore-api/src/main/java/com/github/pulsebeat02/EzMediaCore/frame/entity/EntityCloudIntegratedPlayer.java>`__
 class. Instantiating one requires an instance of the library, the mrl (either can be
 a Youtube url or a file), a callback, a location, and a width/height. For a code
 example, we will use the builder:
 
 .. code-block:: java
 
-  final MinecraftMediaLibrary library = ...;
+  final EzMediaCore library = ...;
   final Player player = ...;
 
   final EntityCloudCallback callback =

@@ -1,7 +1,7 @@
-Instantiating an Extraction Setting
-===================================
+Instantiating Audio Attributes
+==============================
 
-To instantiate an ExtractionSetting, you need four arguments.
+To instantiate an AudioAttributes, you need four arguments.
 
 You need a `bitrate <https://en.wikipedia.org/wiki/Bit_rate#Audio>`__
 , a number of `channels <https://en.wikipedia.org/wiki/Surround_sound>`__
@@ -27,12 +27,11 @@ the requirement that it must be greater or equal to 0.
 
   /*
 
+  "ogg" -> Codec of the Audio
   160_000 -> Bitrate of Audio
   1 -> Channels for Audio
   44_100 -> Sampling Rate of Audio
   50 -> Volume of Audio
 
   */
-  final ExtractionSetting setting = new ExtractionSetting(160_000, 1, 44_100, 50);
-
-There is also a builder if you need to use it, but typically four arguments is enough.
+  final AudioAttributes attributes = new AudioAttributes("ogg", 160_000, 1, 44_100, 50);

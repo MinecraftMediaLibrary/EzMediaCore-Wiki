@@ -48,11 +48,9 @@ doesn't use a matrix but rather uses the colors of surrounding neighbors to defi
 its own color. This results in a better overall quality of image, but at the cost
 of slower speed.
 
-In MinecraftMediaLibrary, it supports Standard Downscaled Dithering, Ordered Dithering,
-Filter Lite Dithering, and
-`Floyd Steinberg Dithering <https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering>`__.
-Implementation of various dithering algorithms can be found within
-`this package <https://github.com/MinecraftMediaLibrary/MinecraftMediaLibrary/tree/master/minecraftmedialibrary-api/src/main/java/com/github/pulsebeat02/minecraftmedialibrary/frame/dither>`__
+In EzMediaCore, it supports Standard Downscaled Dithering, Ordered Dithering,
+Filter Lite Dithering, and Floyd Steinberg Dithering. Implementation of various
+dithering algorithms can be found within the dither package.
 
 Speed and Quality of Dithering Algorithms
 -----------------------------------------
